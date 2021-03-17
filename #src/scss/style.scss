@@ -317,7 +317,13 @@ textarea {
 }
 
 button.btn-default {
-	
+	min-width: 200px;
+	font-size: 18px;
+	font-weight: 400;
+	min-height: 42px;
+	&:active {
+		background-color: #E9E9E9;
+	}
 }
 
 // === and btn ========================================================================
@@ -337,6 +343,13 @@ button.btn-default {
 
 // === TEXT CONTETN BLOCK ========================================================================
 .text-content {
+	font-family: $mainFontFamily;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 1.5556em;
+	color: #1B1B1B;
+
 	& h1 {}
 	& h2 {
 
@@ -350,7 +363,7 @@ button.btn-default {
 	& h6 {}
 
 	& p {
-
+		margin-bottom: 1.4em;
 	}
 
 	& ul {
