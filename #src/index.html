@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('_head.html',{
+	"title": "New Project"
+	})
+	<body>
+		<!-- == WRAPPER ================== -->
+		<div class="wrapper ">
+			<!-- == TOP LINE ================== -->
+			@@include('common/header/_header.html',{})
+			<!-- == // TOP LINE ================== -->
+
+			<!-- == PAGE CONTENT ================== -->
+			<main class="page"> 
+				<section class="promo-hero">
+					<div class="promo-hero__bg ibg">
+						<img src="img/photo/promo-header.jpg" alt="bg">
+						<!-- <video class="promo-header__video" autoplay playsinline muted preload="none" loop poster="img/photo/promo-header.jpg">
+							<source src="img/videoForTest.mp4" type="video/mp4" />
+						</video> -->
+					</div>
+					<div class="promo-hero__body container">
+						<div class="promo-hero__inner">
+							<h1 class="promo-hero__title title-1">
+								Water Desalination Technologies
+							</h1>
+							<a href="#actualGoods"  class="anchor promo-hero__icon">
+								<img class="promo-hero__icon-1" src="img/icons/circle-dots-white.svg" alt="circle">
+								<img class="promo-hero__icon-2" src="img/icons/arrow-down.svg" alt="">
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section id="actualGoods" class="actual-goods">
+					<div class="actual-goods__body container">
+						<div class="actual-goods__list">
+							<a href="#" class="actual-goods__item">
+								<div class="actual-goods__item-inner">
+									<div class="actual-goods__img">
+										<img src="img/photo/product01.png" alt="products">
+									</div>
+									<div class="actual-goods__text">
+										<strong>01</strong>
+										RO modules
+									</div>
+								</div>
+							</a>
+							<a href="#" class="actual-goods__item">
+								<div class="actual-goods__item-inner">
+									<div class="actual-goods__img">
+										<img src="img/photo/product02.png" alt="products">
+									</div>
+									<div class="actual-goods__text">
+										<strong>02</strong>
+										Containerized
+									</div>
+								</div>
+							</a>
+							<a href="#" class="actual-goods__item">
+								<div class="actual-goods__item-inner">
+									<div class="actual-goods__img">
+										<img src="img/photo/product03.png" alt="products">
+									</div>
+									<div class="actual-goods__text">
+										<strong>03</strong>
+										Sea boats RO 
+									</div>
+								</div>
+							</a>
+							<a href="#" class="actual-goods__item">
+								<div class="actual-goods__item-inner">
+									<div class="actual-goods__img">
+										<img src="img/photo/product04.png" alt="products">
+									</div>
+									<div class="actual-goods__text">
+										<strong>04</strong>
+										APPR  pumps
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="actual-information">
+					<div class="actual-information__body container">
+						<h2 class="actual-information__title title-2 title-line">Actual Information</h2>
+						<ul class="actual-information__list">
+							<li class="actual-information__list-item">
+								<a href="#" class="card-post">
+									<div class="card-post__main">
+										<div class="card-post__img ibg">
+											<img src="img/photo/post01.jpg" alt="post">
+										</div>
+										<div class="card-post__text-wrap">
+											<div class="card-post__title">Renishaw <br>
+												Process Control</div>
+											<div class="card-post__text">
+												Aqua-Life Ltd. Partnership implemented a quality management system in compliance with the ISO 9001:2015 standard, proving the efficiency of the company in terms of production.
+											</div>
+										</div>
+									</div>
+									<div class="card-post__bottom">
+										view article
+										<span>
+											<span></span>
+										</span>
+									</div>
+								</a>
+							</li>
+							<li class="actual-information__list-item">
+								<a href="#" class="card-post">
+									<div class="card-post__main">
+										<div class="card-post__img ibg">
+											<img src="img/photo/post02.jpg" alt="post">
+										</div>
+										<div class="card-post__text-wrap">
+											<div class="card-post__title">Renishaw <br>
+												Process Control</div>
+											<div class="card-post__text">
+												Aqua-Life Ltd. Partnership implemented a quality management system in compliance with the ISO 9001:2015 standard, proving the efficiency of the company in terms of production.
+											</div>
+										</div>
+									</div>
+									<div class="card-post__bottom">
+										view article
+										<span>
+											<span></span>
+										</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="actual-information__bottom">
+							<a href="#" class="btn-default">Show more</a>
+						</div>
+					</div>
+				</section>
+
+            </main>
+			<!-- == // PAGE CONTENT ================== -->
+			<!-- == FOOTER ================== -->
+			@@include('common/footer/_footer.html',{})
+			<!-- == // FOOTER ================== -->
+		</div>
+		<!-- == // WRAPPER ================== -->
+		@@include('_js.html',{})
+	</body>
+</html>
