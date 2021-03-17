@@ -326,6 +326,48 @@ button.btn-default {
 	}
 }
 
+
+
+.btn-default-small {
+	font-family: $seconFontFamily;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	color: #598AFC;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 25px;
+	min-width: 165px;
+	padding: 3px 15px;
+	border-radius: 99px;
+	border: 1px solid #598AFC;
+	backdrop-filter: blur(6px);
+	align-self: flex-start;
+	transition: all .3s ease;
+
+	@media (min-width: 992px) {
+		&:hover {
+			color: #376FF2;
+			border-color: #376FF2;
+		}
+	}
+
+    &_blue {
+		background-color: #598AFC;
+		color: #fff;
+
+		@media (min-width: 992px) {
+			&:hover {
+				color: #fff;
+				background-color: #376FF2;
+			}
+		}
+    }
+}
+
+
 // === and btn ========================================================================
 
 .input {
@@ -382,6 +424,8 @@ button.btn-default {
 @import "../common/header/#header";
 @import "../common/footer/#footer";
 @import "../common/actual-goods/actual-goods";
+@import "../common/simple-hero/simple-hero";
+@import "../common/breadcrumbs/breadcrumbs";
 // ==== BLOCKS =====================================================
 
 
@@ -390,6 +434,10 @@ button.btn-default {
 	// ==== HOME =====================================================
 	@import "pages/#home";
 	// ==== AND HOME =====================================================
+	
+	// ==== PRODUCTS=====================================================
+	@import "pages/#products";
+	// ==== AND PRODUCTS =====================================================
 	
 // ==== AND PAGES =====================================================
 

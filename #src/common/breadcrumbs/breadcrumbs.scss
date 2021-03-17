@@ -1,0 +1,30 @@
+.breadcrumbs {
+    padding: 15px 0;
+
+    &__list {
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 400;
+        color: $mainColor;
+       
+    }
+
+    &__link {
+        white-space: nowrap;
+        font-weight: 300;
+        color: $mainColor;
+        transition: all .3s ease;
+
+        &:after {
+            content: '—';
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: $hoverColor;
+            }
+        }
+    }
+}
+.container {
+}
