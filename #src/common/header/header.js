@@ -33,12 +33,14 @@
             menuBottom.addEventListener('click', () => {
                 document.body.classList.remove('lock');
                     menu.classList.remove('_open');
+                    burgerBtnAnimation();
                     _slideUp(menu);
             })
 
             menuBottom.addEventListener('swiped-up', function() {
                 document.body.classList.remove('lock');
                 menu.classList.remove('_open');
+                burgerBtnAnimation();
                 _slideUp(menu);
             });
         }
