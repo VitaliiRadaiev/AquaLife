@@ -15,7 +15,7 @@
 	<!-- == WRAPPER ================== -->
 	<div class="wrapper products-page">
 		<!-- == TOP LINE ================== -->
-		<header class="header ">
+		<header class="header _lp">
         <div class="header__top">
             <div class="header__top-body container">
                 <div class="header__logo-scroll">
@@ -348,7 +348,7 @@
 					<h3 class="load-pdf__title title-2 title-line">Data Sheets</h3>
 					<ul class="load-pdf__list">
 						<li>
-							<a href="#" class="load-pdf__card">
+							<div class="load-pdf__card" data-pdfurl="img/test.pdf">
 								<div class="load-pdf__card-bg"></div>
 								<div class="load-pdf__card-inner">
 									<div class="load-pdf__card-suptitle">Aqua-life desalination</div>
@@ -361,10 +361,10 @@
 									<span></span>
 									<span></span>
 								</div>
-							</a>
+							</div>
 						</li>
 						<li>
-							<a href="#" class="load-pdf__card">
+							<div class="load-pdf__card" data-pdfurl="img/test2.pdf">
 								<div class="load-pdf__card-bg"></div>
 								<div class="load-pdf__card-inner">
 									<div class="load-pdf__card-suptitle">Aqua-life desalination</div>
@@ -376,10 +376,10 @@
 									<span></span>
 									<span></span>
 								</div>
-							</a>
+							</div>
 						</li>
 						<li>
-							<a href="#" class="load-pdf__card">
+							<div class="load-pdf__card" data-pdfurl="img/test.pdf">
 								<div class="load-pdf__card-bg"></div>
 								<div class="load-pdf__card-inner">
 									<div class="load-pdf__card-suptitle">Aqua-life desalination</div>
@@ -391,11 +391,11 @@
 									<span></span>
 									<span></span>
 								</div>
-							</a>
+							</div>
 						</li>
 						
 						<li>
-							<a href="#" class="load-pdf__card">
+							<div class="load-pdf__card" data-pdfurl="img/test.pdf">
 								<div class="load-pdf__card-bg"></div>
 								<div class="load-pdf__card-inner">
 									<div class="load-pdf__card-suptitle">Aqua-life desalination</div>
@@ -407,7 +407,7 @@
 									<span></span>
 									<span></span>
 								</div>
-							</a>
+							</div>
 						</li>
 					</ul>
 				</div>
@@ -571,6 +571,17 @@
     </div>
 </footer>
 		<!-- == // FOOTER ================== -->
+		<div class="popup" id="pdfPopup">
+	<div class="popup_body">
+		<div class="popup_content">
+			<div class="popup__close close-popup"><span></span></div>
+			<a href="#" download="" class="_download-btn btn-default">Download pdf</a>
+			<a href="#" target="_blank" class="_open-in-window btn-default">Open in browser</a>
+		</div>
+	</div>
+</div>
+
+
 	</div>
 	<!-- == // WRAPPER ================== -->
 	

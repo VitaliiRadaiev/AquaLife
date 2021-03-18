@@ -47,7 +47,8 @@ $(document).ready(function () {
 	@@include('../common/burger/burger.js');
 	@@include('../common/header/header.js');
 	@@include('../common/footer/footer.js');
-	//@@includ e('../common/popup/popup.js');
+	@@include('../common/popup/popup.js');
+	@@include('../common/load-pdf/load-pdf.js');
 	
 	@@include('pages/#home.js');
 });

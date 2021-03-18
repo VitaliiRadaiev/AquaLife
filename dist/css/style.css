@@ -456,62 +456,6 @@ template {
   display: none;
 }
 
-@font-face {
-  font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?jg6akv");
-  src: url("../fonts/icomoon.eot?jg6akv#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?jg6akv") format("truetype"), url("../fonts/icomoon.woff?jg6akv") format("woff"), url("../fonts/icomoon.svg?jg6akv#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-[class^="icon-"],
-[class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-arrow_right:before {
-  content: "\e904";
-}
-
-.icon-star-empty:before {
-  content: "\e9d7";
-}
-
-.icon-star-full:before {
-  content: "\e9d9";
-}
-
-.icon-arrow-right:before {
-  content: "\e900";
-}
-
-.icon-play_circle_filled:before {
-  content: "\e901";
-}
-
-.icon-pause_circle_filled:before {
-  content: "\e902";
-}
-
-.icon-chevron-small-right:before {
-  content: "\e905";
-}
-
-.icon-user-group:before {
-  content: "\e903";
-}
-
 .select {
   position: relative;
 }
@@ -784,6 +728,112 @@ template {
   -webkit-transform: scale(0) !important;
       -ms-transform: scale(0) !important;
           transform: scale(0) !important;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 50;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup.open .popup_content {
+  opacity: 1;
+}
+
+.popup_body {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem 3rem;
+}
+
+.popup_content {
+  background: #fff;
+  max-width: 70rem;
+  position: relative;
+  width: 100%;
+  -webkit-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+  outline: 0;
+  text-align: center;
+  min-height: 160px;
+  padding: 70px 15px 60px;
+}
+
+.popup_content .btn-default {
+  margin: 0 5px 10px;
+}
+
+.popup__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.popup__close > span {
+  display: block;
+  position: relative;
+  height: 25px;
+  width: 25px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.popup__close > span:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 1px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #000;
+}
+
+.popup__close > span:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #000;
 }
 
 * {
@@ -2097,6 +2147,186 @@ button.btn-default:active {
   content: '—';
 }
 
+.load-pdf {
+  margin-bottom: 34px;
+}
+
+.load-pdf__title {
+  margin-bottom: 37px;
+}
+
+.load-pdf__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.load-pdf__list > li {
+  padding: 0 10px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+  margin-bottom: 75px;
+}
+
+.load-pdf__card {
+  position: relative;
+  display: block;
+  -webkit-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
+  height: 100%;
+  cursor: pointer;
+}
+
+.load-pdf__card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  background: #B6E7FF;
+  border-radius: 10px;
+  -webkit-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.load-pdf__card-bg:before {
+  position: absolute;
+  content: 'PDF';
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 150px;
+  color: #1EB4FF;
+  opacity: 0.2;
+  bottom: 0;
+  right: 0;
+  line-height: 1em;
+  -webkit-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
+  -webkit-transform: translate(15%, 15%);
+      -ms-transform: translate(15%, 15%);
+          transform: translate(15%, 15%);
+}
+
+.load-pdf__card-inner {
+  position: relative;
+  z-index: 2;
+  min-height: 193px;
+  padding: 28px 15px 44px;
+  text-align: center;
+}
+
+.load-pdf__card-suptitle {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000000;
+  margin-bottom: 28px;
+  -webkit-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.load-pdf__card-title {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+  -webkit-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.load-pdf__card-arrow {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 87%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.load-pdf__card-arrow span {
+  display: inline-block;
+  position: relative;
+}
+
+.load-pdf__card-arrow span:nth-child(1) {
+  width: 25px;
+  height: 18px;
+  background-color: #fff;
+  z-index: 2;
+  -webkit-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.load-pdf__card-arrow span:nth-child(1):before {
+  position: absolute;
+  content: '';
+  bottom: -1px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #B6E7FF;
+  width: 19px;
+  height: 16px;
+  -webkit-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.load-pdf__card-arrow span:nth-child(2) {
+  width: 0;
+  height: 0;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-top: 28px solid #fff;
+  -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+.load-pdf__card-arrow span:nth-child(2):before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -124%);
+      -ms-transform: translate(-50%, -124%);
+          transform: translate(-50%, -124%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #B6E7FF;
+  -webkit-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
 .promo-hero {
   position: relative;
 }
@@ -2559,185 +2789,6 @@ button.btn-default:active {
   display: block;
 }
 
-.load-pdf {
-  margin-bottom: 34px;
-}
-
-.load-pdf__title {
-  margin-bottom: 37px;
-}
-
-.load-pdf__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 0 -10px;
-}
-
-.load-pdf__list > li {
-  padding: 0 10px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 25%;
-          flex: 0 1 25%;
-  margin-bottom: 75px;
-}
-
-.load-pdf__card {
-  position: relative;
-  display: block;
-  -webkit-transition: all .6s ease;
-  -o-transition: all .6s ease;
-  transition: all .6s ease;
-  height: 100%;
-}
-
-.load-pdf__card-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  overflow: hidden;
-  background: #B6E7FF;
-  border-radius: 10px;
-  -webkit-transition: all .6s ease;
-  -o-transition: all .6s ease;
-  transition: all .6s ease;
-}
-
-.load-pdf__card-bg:before {
-  position: absolute;
-  content: 'PDF';
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  font-size: 150px;
-  color: #1EB4FF;
-  opacity: 0.2;
-  bottom: 0;
-  right: 0;
-  line-height: 1em;
-  -webkit-transition: all .6s ease;
-  -o-transition: all .6s ease;
-  transition: all .6s ease;
-  -webkit-transform: translate(15%, 15%);
-      -ms-transform: translate(15%, 15%);
-          transform: translate(15%, 15%);
-}
-
-.load-pdf__card-inner {
-  position: relative;
-  z-index: 2;
-  min-height: 193px;
-  padding: 28px 15px 44px;
-  text-align: center;
-}
-
-.load-pdf__card-suptitle {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 18px;
-  color: #000000;
-  margin-bottom: 28px;
-  -webkit-transition: all .6s ease;
-  -o-transition: all .6s ease;
-  transition: all .6s ease;
-}
-
-.load-pdf__card-title {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 23px;
-  color: #000000;
-  -webkit-transition: all .6s ease;
-  -o-transition: all .6s ease;
-  transition: all .6s ease;
-}
-
-.load-pdf__card-arrow {
-  position: absolute;
-  z-index: 3;
-  left: 0;
-  top: 87%;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.load-pdf__card-arrow span {
-  display: inline-block;
-  position: relative;
-}
-
-.load-pdf__card-arrow span:nth-child(1) {
-  width: 25px;
-  height: 18px;
-  background-color: #fff;
-  z-index: 2;
-  -webkit-transition: all .6s ease;
-  -o-transition: all .6s ease;
-  transition: all .6s ease;
-}
-
-.load-pdf__card-arrow span:nth-child(1):before {
-  position: absolute;
-  content: '';
-  bottom: -1px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  background-color: #B6E7FF;
-  width: 19px;
-  height: 16px;
-  -webkit-transition: all .6s ease;
-  -o-transition: all .6s ease;
-  transition: all .6s ease;
-}
-
-.load-pdf__card-arrow span:nth-child(2) {
-  width: 0;
-  height: 0;
-  border-left: 28px solid transparent;
-  border-right: 28px solid transparent;
-  border-top: 28px solid #fff;
-  -webkit-transform: translateY(-3px);
-      -ms-transform: translateY(-3px);
-          transform: translateY(-3px);
-}
-
-.load-pdf__card-arrow span:nth-child(2):before {
-  position: absolute;
-  content: '';
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -124%);
-      -ms-transform: translate(-50%, -124%);
-          transform: translate(-50%, -124%);
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #B6E7FF;
-  -webkit-transition: all .6s ease;
-  -o-transition: all .6s ease;
-  transition: all .6s ease;
-}
-
 @media (min-width: 768px) {
   .item-info-listing__title-mobile {
     display: none;
@@ -2752,6 +2803,10 @@ button.btn-default:active {
 @media (min-width: 992px) {
   .select__option:hover {
     background: rgba(30, 55, 112, 0.3);
+  }
+
+  .popup__close:hover {
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
   .btn-default:hover {
@@ -2885,16 +2940,6 @@ button.btn-default:active {
     color: #386FF2;
   }
 
-  .card-post:hover .card-post__img img {
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-
-  .card-post:hover .card-post__bottom > span:before {
-    width: 126px;
-  }
-
   .load-pdf__card:hover {
     -webkit-transform: translateY(20px);
         -ms-transform: translateY(20px);
@@ -2926,6 +2971,16 @@ button.btn-default:active {
   .load-pdf__card:hover .load-pdf__card-bg:before {
     color: #0009D9;
     opacity: 0.2;
+  }
+
+  .card-post:hover .card-post__img img {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+
+  .card-post:hover .card-post__bottom > span:before {
+    width: 126px;
   }
 }
 
@@ -3144,10 +3199,6 @@ button.btn-default:active {
             transform: translate(0);
   }
 
-  .card-post__main {
-    height: 390px;
-  }
-
   .load-pdf__card-inner {
     min-height: 150px;
   }
@@ -3161,6 +3212,10 @@ button.btn-default:active {
     font-size: 16px;
     line-height: 19px;
   }
+
+  .card-post__main {
+    height: 390px;
+  }
 }
 
 @media (max-width: 991.98px) and (max-width: 767.98px) {
@@ -3170,6 +3225,10 @@ button.btn-default:active {
 }
 
 @media (max-width: 767.98px) {
+  .popup_body {
+    padding: 1.5rem;
+  }
+
   .title-1 {
     font-size: 40px;
   }
@@ -3317,6 +3376,51 @@ button.btn-default:active {
     line-height: 48px;
   }
 
+  .load-pdf {
+    margin-bottom: 0;
+  }
+
+  .load-pdf__list > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    margin-bottom: 50px;
+  }
+
+  .load-pdf__card-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 7px 8px 40px;
+  }
+
+  .load-pdf__card-suptitle {
+    margin-bottom: 8px;
+  }
+
+  .load-pdf__card-title {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .load-pdf__card-arrow {
+    top: 90%;
+  }
+
   .promo-hero__body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -3446,51 +3550,6 @@ button.btn-default:active {
   .video-block__video {
     height: 350px;
   }
-
-  .load-pdf {
-    margin-bottom: 0;
-  }
-
-  .load-pdf__list > li {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
-            flex: 0 1 50%;
-    margin-bottom: 50px;
-  }
-
-  .load-pdf__card-inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 7px 8px 40px;
-  }
-
-  .load-pdf__card-suptitle {
-    margin-bottom: 8px;
-  }
-
-  .load-pdf__card-title {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-
-  .load-pdf__card-arrow {
-    top: 90%;
-  }
 }
 
 @media (max-width: 575px) {
@@ -3508,16 +3567,16 @@ button.btn-default:active {
             flex: 0 1 100%;
   }
 
+  .load-pdf__card-inner {
+    height: 103px;
+  }
+
   .item-info-listing__img {
     min-height: 131px;
   }
 
   .video-block__video {
     height: 182px;
-  }
-
-  .load-pdf__card-inner {
-    height: 103px;
   }
 }
 
@@ -3528,13 +3587,18 @@ button.btn-default:active {
 }
 
 @media (max-width: 374px) {
-  .info-listing__item {
+  .popup_content .btn-default {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .load-pdf__list > li {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
   }
 
-  .load-pdf__list > li {
+  .info-listing__item {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;

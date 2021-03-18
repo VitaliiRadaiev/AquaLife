@@ -61,6 +61,13 @@ function popupClose(popupActive, doUnlock = true) {
 
 function bodyLock() {
 	const lockPaddingValue = window.innerWidth - document.querySelector('body').offsetWidth + 'px';
+	let targetPadding = document.querySelectorAll('._lp');
+	if(targetPadding.length) {
+		for (let index = 0; index < targetPadding.length; index++) {
+			const el = targetPadding[index];
+			el.style.paddingRight = lockPaddingValue;
+		}
+	}
 
 	if(lockPadding.length > 0) {
 		for (let index = 0; index < lockPadding.length; index++) {
@@ -79,7 +86,16 @@ function bodyLock() {
 }
 
 function bodyUnlock() {
+	let targetPadding = document.querySelectorAll('._lp');
+
 	setTimeout(function() {
+		if(targetPadding.length) {
+			for (let index = 0; index < targetPadding.length; index++) {
+				const el = targetPadding[index];
+				el.style.paddingRight = '0px';
+			}
+		}
+
 		for( let index = 0; index < lockPadding.length; index++) {
 			const el = lockPadding[index];
 			el.style.paddingRight = '0px';
