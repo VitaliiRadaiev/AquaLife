@@ -49,6 +49,7 @@ $(document).ready(function () {
 	@@include('../common/footer/footer.js');
 	@@include('../common/popup/popup.js');
 	@@include('../common/load-pdf/load-pdf.js');
+	@@include('../common/all-news/all-news.js');
 	
 	@@include('pages/#home.js');
 });

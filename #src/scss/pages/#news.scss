@@ -1,0 +1,336 @@
+.news-page {
+
+}
+
+
+.news {
+    padding-top: 11px;
+    margin-bottom: 53px;
+
+    @media (max-width: $md3+px) {
+        margin-bottom: 30px;
+    }
+
+    &__main {
+        margin-bottom: 89px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        & > li {
+            flex: 0 1 calc(50% - 10px);
+            margin-bottom: 40px;
+            @media (max-width: $md3+px) {
+                flex: 0 1 calc(50% - 7.5px);
+            }
+        }
+    }
+}
+
+
+
+.main-news {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $md2+px) {
+        flex-direction: column-reverse;
+    }
+
+    &__column {
+        @media (min-width: 992px) {
+            flex: 0 1 calc(50% - 10px);
+        }
+
+
+        &:nth-child(1) {
+            & .link-arrow-bottom {
+                & > span::before {
+                    width: 126px;
+                }
+                @media (min-width: 992px) {
+                    display: none;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+
+            @media (max-width: $md2+px) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    &__img {
+        height: 100%;
+        min-height: 464px;
+        overflow: hidden;
+        border-radius: 10px;
+
+        @media (max-width: $md2+px) {
+            width: calc(100% + 30px);
+            margin-left: -15px;
+            border-radius: 0;
+            margin-bottom: 14px;
+        }
+
+        @media (max-width: $md3+px) {
+            min-height: 252px;
+        }
+    }
+
+    &__text-wrap {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &__date {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: #383838;
+        margin-bottom: 15px;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 48px;
+        color: #000000;
+        margin-bottom: 15px;
+
+        @media (max-width: $md3+px) {
+            font-size: 30px;
+            line-height: 36px;
+        }
+    }
+
+    &__text {
+        &.text-content {
+            line-height: 1.222em;
+        }
+    }
+
+    &__bottom {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        max-height: 142px;
+        padding: 15px 0;
+        padding-right: 56px;
+
+        @media (max-width: $md2+px) {
+            display: none;
+        }
+    }
+}
+
+
+
+
+.link-arrow-bottom {
+    display: inline-flex;
+    font-family: $seconFontFamily;
+    flex-direction: column;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    padding-bottom: 10px;
+    position: relative;
+
+    @media (min-width: 992px) {
+        &:hover {
+            & > span:before {
+                width: 126px;
+            }
+        }
+    }
+
+    & > span {
+        width: auto;
+        display: flex;
+        align-items: center;
+        height: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        & > span {
+            display: inline-block;
+            width: 11px;
+            height: 9px;
+            background: url('../img/icons/chevron.svg') center no-repeat;
+            background-size: contain;
+            margin-left: -7px;
+        }
+
+        & img {
+            transition: all .4s ease;
+            transform: translateX(95px);
+        }
+
+        &:before {
+            content: '';
+            height: 1px;
+            width: 30px;
+            transition: all .4s ease;
+            background-color: $mainColor;
+            display: inline-block;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+.card-news {
+    display: block;
+    color: #fff;
+    height: 100%;
+
+    @media (max-width: $md3+px) {
+        color: #000;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (min-width: 992px) {
+        &:hover {
+            & .card-news__img img {
+                transform: scale(1.1);
+            }
+
+            & .link-arrow-bottom {
+                & > span::before {
+                    width: 126px;
+                }
+            }
+        }
+    }
+
+    &__inner {
+        min-height: 460px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+
+        @media (max-width: $md3+px) {
+            min-height: auto;
+            flex: 1 1 auto;
+            justify-content: flex-start;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        border-radius: 10px;
+
+        & img {
+            transition: all .6s ease;
+        }
+
+        @media (max-width: $md3+px) {
+            position: relative;
+            height: 240px;
+        }
+
+        @media (max-width: 575px) {
+            height: 135px;
+        }
+    }
+
+    &__text-wrap {
+        border-radius: 10px;
+        padding: 5px;
+        @media (min-width: 768px) {
+            padding: 20px;
+                    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+            background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+        }
+    }
+
+    &__date {
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 400;
+        margin-bottom: 11px;
+
+        @media (min-width: $md3+px) {
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 44px;
+        margin-bottom: 10px;
+        max-width: 500px;
+        @media (max-width: $md3+px) {
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__text {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+
+        @media (max-width: $md3+px) {
+            display: none;
+        }
+    }
+
+    &__bottom {
+        padding-top: 34px;
+        padding-right: 55px;
+        display: flex;
+        justify-content: flex-end;
+
+        & .link-arrow-bottom {
+            color: #1E3770;
+        }
+
+        @media (max-width: $md3+px) {
+            padding-top: 0;
+            padding-right: 0;
+            justify-content: flex-start;
+            padding-left: 5px;
+        }
+    }
+}
