@@ -1,0 +1,122 @@
+.video-list-page {
+}
+
+.videos {
+    margin-bottom: 60px;
+    padding-top: 14px;
+
+    @media (max-width: $md3+px) {
+        margin-bottom: 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px 30px;
+
+        @media (max-width: $md3+px) {
+            margin: 0 -7.5px 20px;
+        }
+
+        & > li {
+            flex: 0 1 33.333%;
+            padding: 0 10px;
+            margin-bottom: 30px;
+
+            @media (max-width: $md3+px) {
+                padding: 0 7.5px;
+                flex: 0 1 50%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &__bottom {
+        text-align: center;
+    }
+}
+
+.video-card {
+    display: block;
+
+    @media (min-width: 992px) {
+        &:hover {
+            & .video-card__img img {
+                &:not(.video-card__play) {
+                    transform: scale(1.1);
+                }
+            }
+
+            & .video-card__play {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+    }
+
+    &__img {
+        height: 0;
+        padding-bottom: 67.4%;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        position: relative;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 10px;
+        }
+
+        & img {
+            transition: all 0.6s ease;
+        }
+    }
+
+    &__play {
+        position: absolute;
+        z-index: 2;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%);
+        width: 109px !important;
+        height: auto !important;
+        object-fit: contain;
+        transition: all 0.6s ease;
+
+        @media (max-width: $md3+px) {
+            width: 50px !important;
+        }
+    }
+
+    &__suptitle {
+        font-family: $seconFontFamily;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+        color: #606060;
+        margin-bottom: 10px;
+        padding: 0 19px;
+
+        @media (max-width: $md3+px) {
+            padding: 0;
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__title {
+        font-family: $seconFontFamily;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 23px;
+        line-height: 27px;
+        color: #000000;
+        padding: 0 19px;
+
+        @media (max-width: $md3+px) {
+            padding: 0;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+}
