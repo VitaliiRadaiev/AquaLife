@@ -1224,65 +1224,103 @@ document.addEventListener('keydown', function(e) {
 ;
 });
 
-//// html example --- <img class="lazy" data-src="https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" src="img/photo/placeholder.jpg" alt="img">
+{
 
 
-// === lazy load ==================================================================
-document.addEventListener("DOMContentLoaded", function () {
-	var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-    let active = false;
+	let isMap = document.getElementById("map-1");
+	if(isMap) {
+		var map1;
 
-	if ("IntersectionObserver" in window) {
+        var map2;
+        var globalMarkers;
         
-		let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-			entries.forEach(function (entry) {
-				if (entry.isIntersecting) {
-					let lazyImage = entry.target;
-					lazyImage.src = lazyImage.dataset.src;
-					//lazyImage.srcset = lazyImage.dataset.srcset;
-					lazyImage.classList.remove("lazy");
-					lazyImageObserver.unobserve(lazyImage);
-				}
+		var center1 = {
+			lat: 51.2375147549956,
+			lng: 17.860102898232235,
+		}
+		var center2 = {
+			lat: 26.977582962023323,
+			lng: 17.717931632127538,
+		}
+
+		var markerPosition1 = {
+            lat: 51.2375147549956,
+			lng: 17.860102898232235,
+		}
+
+		
+        var markers = [];
+
+
+
+		function initMap() {
+            globalMarkers = [
+                    new google.maps.LatLng(51.2375147549956, 17.860102898232235),
+                    new google.maps.LatLng(49.4102183495809, 32.053993300771204),
+                    new google.maps.LatLng(57.77750842208651, -101.65709307870438),
+                    new google.maps.LatLng(-25.037054343294088, 134.42196995479162),
+            ];
+		
+			map1 = new google.maps.Map(document.getElementById('map-1'), {
+
+				center: {lat: center1.lat, lng: center1.lng},
+		
+				panControl: false,
+				mapTypeControl: false,
+				zoom: 4,
+				//styles: 
 			});
-		});
 
-		lazyImages.forEach(function (lazyImage) {
-			lazyImageObserver.observe(lazyImage);
-		});
-	} else {
-        const lazyLoad = function() {
-            if (active === false) {
-              active = true;
-              setTimeout(function() {
-                lazyImages.forEach(function(lazyImage) {
-                  if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-                    lazyImage.src = lazyImage.dataset.src;
-                    //lazyImage.srcset = lazyImage.dataset.srcset;
-                    lazyImage.classList.remove("lazy");
-        
-                    lazyImages = lazyImages.filter(function(image) {
-                      return image !== lazyImage;
-                    });
-        
-                    if (lazyImages.length === 0) {
-                      document.removeEventListener("scroll", lazyLoad);
-                      window.removeEventListener("resize", lazyLoad);
-                      window.removeEventListener("orientationchange", lazyLoad);
-                    }
-                  }
-                });
-        
-                active = false;
-              }, 200);
-            }
-          };
-      
-          lazyLoad();
-        
-          document.addEventListener("scroll", lazyLoad);
-          window.addEventListener("resize", lazyLoad);
-          window.addEventListener("orientationchange", lazyLoad);
-    }
-    
-});
-// === // lazy load ==================================================================;
+			map2 = new google.maps.Map(document.getElementById('map-2'), {
+
+				center: {lat: center2.lat, lng: center2.lng},
+		
+				panControl: false,
+				mapTypeControl: false,
+				zoom: 2,
+
+
+				//styles: 
+			});
+
+            drop();
+
+			var marker1 = new google.maps.Marker({
+
+			
+			    position: {lat: markerPosition1.lat, lng: markerPosition1.lng},
+
+		
+			    map: map1,
+
+			
+			    title: '',
+			    label: '',
+
+		
+			    icon: {
+                    url: 'img/icons/droplet.svg',
+                    scaledSize: new google.maps.Size(20, 20),
+                } 
+			});
+
+		}
+
+        function drop() {
+			for (let i = 0; i < globalMarkers.length; i++) 
+			 {
+			   markers.push(new google.maps.Marker({
+			   position: globalMarkers[i],
+			   map: map2,
+               icon: {
+                url: 'img/icons/droplet.svg',
+                scaledSize: new google.maps.Size(20, 20),
+                } 
+			   }));
+			 }
+
+		}
+	}
+}
+;
+

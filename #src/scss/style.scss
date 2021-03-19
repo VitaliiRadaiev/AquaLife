@@ -424,6 +424,11 @@ button.btn-default {
 	}
 
 	& ul {
+		margin-bottom: 30px;
+
+		@media (max-width: $md3+px) {
+			margin-bottom: 15px;
+		}
 	}
 
 	& ol {
@@ -502,5 +507,13 @@ button.btn-default {
 // ==== AND NEWS SINGLE ARTICLE =====================================================
 @import "pages/#about-us";
 // ==== AND NEWS SINGLE ARTICLE =====================================================
+
+// ==== REFERENCE LIST =====================================================
+@import "pages/#reference-list";
+// ==== AND REFERENCE LIST =====================================================
+
+// ==== AND REFERENCE LIST =====================================================
+@import "pages/#contact";
+// ==== AND REFERENCE LIST =====================================================
 
 // ==== AND PAGES =====================================================

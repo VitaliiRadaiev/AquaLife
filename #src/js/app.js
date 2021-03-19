@@ -55,4 +55,5 @@ $(document).ready(function () {
 	@@include('pages/#about-us.js');
 });
 
-//@@include('plagins/lazy-load.js');
+@@include('pages/#contact.js');
+

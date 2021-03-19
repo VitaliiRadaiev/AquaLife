@@ -1,0 +1,50 @@
+.reference-list-page {
+    & .simple-hero {
+        & .simple-hero__title {
+            @media (max-width: $md3+px) {
+                font-weight: 200;
+                font-size: 30px;
+                line-height: 36px;
+            }
+        }
+    }
+
+    & .info-listing {
+        padding-top: 10px;
+        & .info-listing__item {
+            @media (max-width: $md3+px) {
+                flex: 0 1 100%;
+                text-align: left !important;
+
+                & .item-info-listing__text {
+                    display: block;
+                }
+
+                & .btn-default-small {
+                    width: auto;
+                }
+            }
+
+            @media (max-width: 575px) {
+                & .item-info-listing__img {
+                    min-height: 143px;
+                }
+            }
+
+            & .btn-default-small {
+                min-width: 118px;
+            }
+
+            &:nth-child(even) {
+                text-align: right;
+
+                & .item-info-listing__title {
+                    &:before {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

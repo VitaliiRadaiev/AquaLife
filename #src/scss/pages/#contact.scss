@@ -1,0 +1,200 @@
+.contact-page {
+}
+
+.contact-details {
+    padding-top: 14px;
+    margin-bottom: 21px;
+
+    &__top {
+        margin-bottom: 100px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 32px;
+
+        
+    }
+
+    &__inner {
+        display: flex;
+
+        @media (max-width: $md2+px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__column-1 {
+        flex: 0 0 57.5%;
+        margin-right: 20px;
+        
+
+        @media (max-width: $md2+px) {
+            flex: 0 1 auto;
+            margin-right: 0;
+        }
+
+        & #map-1 {
+            height: 100%;
+            min-height: 392px;
+            background-color: #c4c4c4;
+
+            @media (max-width: $md2+px) {
+                min-height: 400px;
+
+                width: calc(100% + 30px);
+                margin-left: -15px;
+            }
+        }
+    }
+
+    &__column-2 {
+        flex: 1 1 auto;
+        padding-top: 37px;
+
+        @media (max-width: $md2+px) {
+            margin-bottom: 15px;
+            padding-top: 0;
+        }
+    }
+
+    &__title-2 {
+        display: flex;
+        align-items: flex-end;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 26px;
+        line-height: 31px;
+        color: #3c62bc;
+        margin-bottom: 15px;
+
+        @media (max-width: $md2+px) {
+            position: relative;
+
+            &:before {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: -6px;
+                height: 1px;
+                width: 85%;
+                background-color: rgba($mainColor, 0.3);
+            }
+        }
+
+        & strong {
+            flex: 0 0 auto;
+            margin-right: 15px;
+            font-weight: 200;
+            font-size: 50px;
+            line-height: 1em;
+        }
+    }
+
+    &__subtitle {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        color: #3c62bc;
+        margin-bottom: 7px;
+    }
+
+    &__table {
+        margin-bottom: 25px;
+        @media (max-width: $md3+px) {
+            display: block;
+
+            & tr {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+
+
+        & td {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 19px;
+            color: #000000;
+            padding-top: 7px;
+            padding-bottom: 7px;
+
+            @media (max-width: $md3+px) {
+                display: block;
+                padding: 0 !important;
+            }
+
+            &:first-child {
+                width: 122px;
+                padding-right: 15px;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 30px;
+                color: #000000;
+            }
+
+            & > a {
+                color: #2561BB;
+                text-decoration: underline;
+                margin-right: 30px;
+
+                @media (min-width: 992px) {
+                    &:hover {
+                        color: $hoverColor;
+                    }
+                }
+            }
+        }
+    }
+
+    &__link {
+        display: inline-flex;
+        margin-right: 30px;
+        align-items: center;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        text-decoration: underline;
+        color: #2561BB;
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: $hoverColor;
+                text-decoration: underline;
+                & img {
+                    transform: scale(1.15);
+                }
+            }
+        }
+
+        & img {
+            flex: 0 0 37px;
+            width: 37px;
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px;
+            transition: all .3s ease;
+        }
+    }
+
+    &__bottom {
+
+        & #map-2 {
+            height: 746px;
+            width: 100%;
+            background-color: #c4c4c4;
+
+            @media (max-width: $md2+px) {
+                width: calc(100% + 30px);
+                margin-left: -15px;
+            }
+
+            @media (max-width: $md3+px) {
+                height: 400px;
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+	<!-- == WRAPPER ================== -->
+	<div class="wrapper contact-page">
+		<!-- == TOP LINE ================== -->
+		@@include('common/header/_header.html',{})
+		<!-- == // TOP LINE ================== -->
+
+		<!-- == PAGE CONTENT ================== -->
+		<main class="page">
+			<section class="simple-hero">
+				<div class="simple-hero__bg ibg">
+					<img src="img/photo/simple-hero04.jpg" alt="bg">
+				</div>
+				<div class="simple-hero__body container">
+					<h2 class="simple-hero__title">
+						Contact
+					</h2>
+				</div>
+			</section>
+			<div class="breadcrumbs">
+				<div class="container">
+					<div class="breadcrumbs__list">
+
+						<a href="#" class="breadcrumbs__link">
+							Home
+						</a>
+
+						Contact
+					</div>
+				</div>
+			</div>
+
+            <section class="contact-details">
+                <div class="container">
+                    <div class="contact-details__top">
+                        <h2 class="contact-details__title title-2 title-line">Contact details:</h2>
+                        <div class="contact-details__inner">
+                            <div class="contact-details__column-1">
+                                <div id="map-1"></div>
+                            </div>
+                            <div class="contact-details__column-2">
+                                <div class="contact-details__title-2">
+                                    <strong>01</strong>
+                                    Office in Poland
+                                </div>
+                                <div class="contact-details__subtitle">
+                                    Agua-Life LTD. Partnership
+                                </div>
+                                <table class="contact-details__table">
+                                    <tr>
+                                        <td>Adress:</td>
+                                        <td>
+                                            Nowa wies ksiazeca, 4a, 63-640 Bralin, Poland
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone:</td>
+                                        <td>
+                                            <a href="#">+48 601 952478</a>
+                                            <a href="#">+48 512 207 921</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Languages:</td>
+                                        <td>English, Polish, German, Russian</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mail:</td>
+                                        <td><a href="#">office@aqua-life.pl</a></td>
+                                    </tr>
+                                </table>
+                                <a href="#" class="contact-details__link">
+                                    <img src="img/icons/viber.svg" alt="viber">
+                                    +48 601 952478
+                                </a>
+                                <a href="#" class="contact-details__link">
+                                    <img src="img/icons/whatsapp.svg" alt="viber">
+                                    +48 601 952385
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-details__bottom">
+                        <h2 class="contact-details__title title-2 title-line">Distributors & Business Partners:</h2>
+                        <div id="map-2"></div>
+                    </div>
+                </div>
+            </section>
+
+		</main>
+		<!-- == // PAGE CONTENT ================== -->
+		<!-- == FOOTER ================== -->
+		@@include('common/footer/_footer.html',{})
+		<!-- == // FOOTER ================== -->
+		@@include('common/popup/_popup.html',{})
+
+	</div>
+	<!-- == // WRAPPER ================== -->
+	@@include('_js.html',{})
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+    defer
+    ></script>
+</body>
+
+</html>
