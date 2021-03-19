@@ -12,9 +12,8 @@
 // ==== // FONTS ===========================================================================================
 
 // ==== VARS ===========================================================================================
-@import "vars"; 
+@import "vars";
 // ==== // VARS ===========================================================================================
-
 
 // ==== НОРМАЛАЙЗ ===========================================================================================
 @import "normalize";
@@ -48,8 +47,6 @@
 // ==== POPUP ===========================================================================================
 @import "../common/popup/popup";
 // ==== // POPUP ===========================================================================================
-
-
 
 * {
 	padding: 0px;
@@ -97,9 +94,8 @@ body {
 	font-size: 1.8rem;
 	line-height: 1.555em;
 
-
 	opacity: 0;
-	transition: opacity .8s ease;
+	transition: opacity 0.8s ease;
 
 	&.lock {
 		overflow: hidden;
@@ -108,7 +104,6 @@ body {
 	&.is-load {
 		opacity: 1;
 	}
-
 }
 
 input,
@@ -159,12 +154,9 @@ textarea {
 	appearance: none;
 }
 
-
-
 .center {
 	text-align: center;
 }
-
 
 .wrapper {
 	width: 100%;
@@ -180,7 +172,6 @@ textarea {
 .page {
 	flex: 1 1 auto;
 }
-
 
 .container {
 	max-width: 1330px;
@@ -209,7 +200,6 @@ textarea {
 	}
 }
 
-
 // === title ========================================================================
 .title-line {
 	padding-bottom: 10px;
@@ -217,7 +207,7 @@ textarea {
 
 	&:before {
 		position: absolute;
-		content: '';
+		content: "";
 		bottom: 0;
 		left: 0;
 		width: 100%;
@@ -226,7 +216,6 @@ textarea {
 		background-color: rgba($mainColor, 0.3);
 	}
 }
-
 
 .title-1 {
 	font-family: $mainFontFamily;
@@ -265,31 +254,21 @@ textarea {
 }
 
 .title-4 {
-
 }
 
 .title-5 {
-
-
 }
 .title-6 {
-
-
 }
 
 .suptitle {
-
 }
 .subtitle {
-
 }
 
 .text {
-
 }
 // === and title ========================================================================
-
-
 
 // === btn ========================================================================
 .btn-default {
@@ -300,12 +279,12 @@ textarea {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	color: #FFFFFF;
-	background: #598AFC;
+	color: #ffffff;
+	background: #598afc;
 	border-radius: 999px;
 	min-height: 48px;
 	min-width: 310px;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	cursor: pointer;
 	padding: 6px 15px;
 
@@ -322,11 +301,9 @@ button.btn-default {
 	font-weight: 400;
 	min-height: 42px;
 	&:active {
-		background-color: #E9E9E9;
+		background-color: #e9e9e9;
 	}
 }
-
-
 
 .btn-default-small {
 	font-family: $seconFontFamily;
@@ -334,7 +311,7 @@ button.btn-default {
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 19px;
-	color: #598AFC;
+	color: #598afc;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -342,46 +319,67 @@ button.btn-default {
 	min-width: 165px;
 	padding: 3px 15px;
 	border-radius: 99px;
-	border: 1px solid #598AFC;
+	border: 1px solid #598afc;
 	backdrop-filter: blur(6px);
 	align-self: flex-start;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 
 	@media (min-width: 992px) {
 		&:hover {
-			color: #376FF2;
-			border-color: #376FF2;
+			color: #376ff2;
+			border-color: #376ff2;
 		}
 	}
 
-    &_blue {
-		background-color: #598AFC;
+	&_blue {
+		background-color: #598afc;
 		color: #fff;
 
 		@media (min-width: 992px) {
 			&:hover {
 				color: #fff;
-				background-color: #376FF2;
+				background-color: #376ff2;
 			}
 		}
-    }
+	}
 }
-
 
 // === and btn ========================================================================
 
 .input {
-
 }
 
 .textarea {
-
 }
 
 .link {
-
 }
 
+.float-left {
+	float: left;
+	margin-right: 20px;
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.float-right {
+	float: right;
+	margin-left: 20px;
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.clear {
+	&:after {
+		content: "";
+		display: inline-block;
+		clear: both;
+	}
+}
 
 // === TEXT CONTETN BLOCK ========================================================================
 .text-content {
@@ -390,35 +388,68 @@ button.btn-default {
 	font-weight: 300;
 	font-size: 18px;
 	line-height: 1.5556em;
-	color: #1B1B1B;
+	color: #1b1b1b;
 
-	& h1 {}
-	& h2 {
-
+	& h1 {
 	}
-	& h3 {}
-	& h4 {}
+	& h2 {
+		font-weight: 300;
+		font-size: 30px;
+		line-height: 1.2em;
+		text-align: center;
+		color: #000000;
+		text-align: center;
+		margin-bottom: 0.666em;
+
+		@media (max-width: $md3+px) {
+			font-size: 24px;
+		}
+	}
+	& h3 {
+	}
+	& h4 {
+	}
 
 	& h5 {
-
 	}
-	& h6 {}
+	& h6 {
+	}
 
 	& p {
 		margin-bottom: 1.4em;
+
+		& ~ h2 {
+			margin-top: 1.666em;
+		}
 	}
 
 	& ul {
-
 	}
 
-	& ol {}
+	& ol {
+	}
 
-	& figure {}
+	& figure {
+		display: block;
+		margin-bottom: 26px;
 
+		@media (max-width: $md3+px) {
+			margin-bottom: 20px;
+		}
+
+		& img {
+			width: 100%;
+			height: auto;
+			display: block;
+
+			@media (max-width: $md2+px) {
+				width: calc(100% + 30px);
+				margin-left: -15px;
+			}
+		}
+	}
 }
 // === and TEXT CONTETN BLOCK ========================================================================
-
 
 // ==== BLOCKS =====================================================
 @import "../common/header/#header";
@@ -428,23 +459,25 @@ button.btn-default {
 @import "../common/breadcrumbs/breadcrumbs";
 @import "../common/load-pdf/load-pdf";
 @import "../common/all-news/all-news";
+@import "../common/hero/hero";
 // ==== BLOCKS =====================================================
-
 
 // ==== PAGES =====================================================
 
-	// ==== HOME =====================================================
-	@import "pages/#home";
-	// ==== AND HOME =====================================================
-	
-	// ==== PRODUCTS=====================================================
-	@import "pages/#products";
-	// ==== AND PRODUCTS =====================================================
-	
-	// ==== NEWS =====================================================
-	@import "pages/#news";
-	// ==== AND NEWS =====================================================
-	
+// ==== HOME =====================================================
+@import "pages/#home";
+// ==== AND HOME =====================================================
+
+// ==== PRODUCTS=====================================================
+@import "pages/#products";
+// ==== AND PRODUCTS =====================================================
+
+// ==== NEWS =====================================================
+@import "pages/#news";
+// ==== AND NEWS =====================================================
+
+// ==== NEWS SINGLE ARTICLE=====================================================
+@import "pages/#single-article";
+// ==== AND NEWS SINGLE ARTICLE =====================================================
+
 // ==== AND PAGES =====================================================
-
-

@@ -1,0 +1,112 @@
+.single-article-page {
+}
+
+.article {
+    padding-top: 40px;
+    margin-bottom: 94px;
+
+    @media (max-width: $md3+px) {
+        padding-top: 30px;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 40px;
+
+    }
+
+    &__body {
+        display: flex;
+
+        @media (max-width: $md2+px) {
+            display: block;
+        }
+    }
+
+    &__column-1 {
+        flex: 1 1 auto;
+
+        &.text-content {
+            font-size: 20px;
+            line-height: 30px;
+
+            & p {
+                margin-bottom: 1.5em;
+            }
+        }
+    }
+
+    &__column-2 {
+        flex: 0 0 220px;
+        padding-left: 20px;
+        padding-top: 10px;
+
+        @media (max-width: $md2+px) {
+            padding-left: 0;
+        }
+    }
+}
+
+.related-news {
+    border-top: 2px solid #1e3770;
+    padding-top: 9px;
+    margin-bottom: 20px;
+
+    &__title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #383838;
+        margin-bottom: 9px;
+    }
+
+    &__list {
+        & > li {
+            border-top: 1px solid #cecece;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 10px 0 10px 15px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: $mainColor;
+        transition: all 0.3s ease;
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 4px;
+            background-color: $mainColor;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
+
+        &.active {
+            font-weight: 400;
+
+            &:before {
+                height: 8px;
+                width: 8px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                
+
+                &:before {
+                    height: 8px;
+                    width: 8px;
+                }
+            }
+        }
+    }
+}

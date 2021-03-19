@@ -1644,9 +1644,9 @@ body {
   font-size: 1.8rem;
   line-height: 1.555em;
   opacity: 0;
-  -webkit-transition: opacity .8s ease;
-  -o-transition: opacity .8s ease;
-  transition: opacity .8s ease;
+  -webkit-transition: opacity 0.8s ease;
+  -o-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
 }
 
 body.lock {
@@ -1771,7 +1771,7 @@ textarea {
 
 .title-line:before {
   position: absolute;
-  content: '';
+  content: "";
   bottom: 0;
   left: 0;
   width: 100%;
@@ -1819,14 +1819,14 @@ textarea {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #FFFFFF;
-  background: #598AFC;
+  color: #ffffff;
+  background: #598afc;
   border-radius: 999px;
   min-height: 48px;
   min-width: 310px;
-  -webkit-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   padding: 6px 15px;
 }
@@ -1839,7 +1839,7 @@ button.btn-default {
 }
 
 button.btn-default:active {
-  background-color: #E9E9E9;
+  background-color: #e9e9e9;
 }
 
 .btn-default-small {
@@ -1848,7 +1848,7 @@ button.btn-default:active {
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #598AFC;
+  color: #598afc;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1862,19 +1862,43 @@ button.btn-default:active {
   min-width: 165px;
   padding: 3px 15px;
   border-radius: 99px;
-  border: 1px solid #598AFC;
+  border: 1px solid #598afc;
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
   -ms-flex-item-align: start;
       align-self: flex-start;
-  -webkit-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn-default-small_blue {
-  background-color: #598AFC;
+  background-color: #598afc;
   color: #fff;
+}
+
+.float-left {
+  float: left;
+  margin-right: 20px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.float-right {
+  float: right;
+  margin-left: 20px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.clear:after {
+  content: "";
+  display: inline-block;
+  clear: both;
 }
 
 .text-content {
@@ -1883,11 +1907,36 @@ button.btn-default:active {
   font-weight: 300;
   font-size: 18px;
   line-height: 1.5556em;
-  color: #1B1B1B;
+  color: #1b1b1b;
+}
+
+.text-content h2 {
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 1.2em;
+  text-align: center;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 0.666em;
 }
 
 .text-content p {
   margin-bottom: 1.4em;
+}
+
+.text-content p ~ h2 {
+  margin-top: 1.666em;
+}
+
+.text-content figure {
+  display: block;
+  margin-bottom: 26px;
+}
+
+.text-content figure img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .header {
@@ -3206,6 +3255,75 @@ button.btn-default:active {
   color: #424242;
 }
 
+.hero {
+  position: relative;
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero__bg:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero__body {
+  min-height: 571px;
+  color: #fff;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 60px 15px 96px;
+}
+
+.hero__title {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 53px;
+  line-height: 65px;
+  max-width: 682px;
+  margin-bottom: 20px;
+}
+
+.hero__text {
+  color: #fff;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  max-width: 506px;
+  margin-bottom: 20px;
+}
+
+.hero__date {
+  position: absolute;
+  left: 17px;
+  bottom: 25px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+}
+
 .promo-hero {
   position: relative;
 }
@@ -3923,6 +4041,102 @@ button.btn-default:active {
   color: #1E3770;
 }
 
+.article {
+  padding-top: 40px;
+  margin-bottom: 94px;
+}
+
+.article__title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.article__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.article__column-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.article__column-1.text-content {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.article__column-1.text-content p {
+  margin-bottom: 1.5em;
+}
+
+.article__column-2 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 220px;
+          flex: 0 0 220px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.related-news {
+  border-top: 2px solid #1e3770;
+  padding-top: 9px;
+  margin-bottom: 20px;
+}
+
+.related-news__title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #383838;
+  margin-bottom: 9px;
+}
+
+.related-news__list > li {
+  border-top: 1px solid #cecece;
+}
+
+.related-news__link {
+  display: block;
+  padding: 10px 0 10px 15px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #1E3770;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.related-news__link:before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 4px;
+  width: 4px;
+  background-color: #1E3770;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.related-news__link.active {
+  font-weight: 400;
+}
+
+.related-news__link.active:before {
+  height: 8px;
+  width: 8px;
+}
+
 @media (min-width: 767.98px) {
   .card-news__date {
     font-size: 14px;
@@ -3995,13 +4209,13 @@ button.btn-default:active {
   }
 
   .btn-default-small:hover {
-    color: #376FF2;
-    border-color: #376FF2;
+    color: #376ff2;
+    border-color: #376ff2;
   }
 
   .btn-default-small_blue:hover {
     color: #fff;
-    background-color: #376FF2;
+    background-color: #376ff2;
   }
 
   .header._is-scroll .header__top {
@@ -4193,6 +4407,11 @@ button.btn-default:active {
   .card-news:hover .link-arrow-bottom > span::before {
     width: 126px;
   }
+
+  .related-news__link:hover:before {
+    height: 8px;
+    width: 8px;
+  }
 }
 
 @media (max-width: 1267px) {
@@ -4214,6 +4433,11 @@ button.btn-default:active {
 @media (max-width: 991.98px) {
   .select__title {
     font-size: 18px;
+  }
+
+  .text-content figure img {
+    width: calc(100% + 30px);
+    margin-left: -15px;
   }
 
   .header__top {
@@ -4449,6 +4673,14 @@ button.btn-default:active {
   .main-news__bottom {
     display: none;
   }
+
+  .article__body {
+    display: block;
+  }
+
+  .article__column-2 {
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 991.98px) and (max-width: 767.98px) {
@@ -4472,6 +4704,14 @@ button.btn-default:active {
 
   .title-3 {
     font-size: 20px;
+  }
+
+  .text-content h2 {
+    font-size: 24px;
+  }
+
+  .text-content figure {
+    margin-bottom: 20px;
   }
 
   .footer {
@@ -4671,6 +4911,30 @@ button.btn-default:active {
     line-height: 27px;
   }
 
+  .hero__body {
+    min-height: 295px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 20px 15px 40px;
+  }
+
+  .hero__title {
+    font-weight: 200;
+    font-size: 35px;
+    line-height: 42px;
+    margin-bottom: 10px;
+  }
+
+  .hero__text {
+    margin-bottom: 10px;
+  }
+
+  .hero__date {
+    left: 15px;
+    bottom: 10px;
+  }
+
   .promo-hero__body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -4868,6 +5132,10 @@ button.btn-default:active {
         -ms-flex-pack: start;
             justify-content: flex-start;
     padding-left: 5px;
+  }
+
+  .article {
+    padding-top: 30px;
   }
 }
 
