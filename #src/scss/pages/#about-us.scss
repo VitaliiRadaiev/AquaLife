@@ -1,0 +1,211 @@
+.about-us-page {
+    & .about-company {
+        margin-bottom: 102px;
+        & .about-company__head {
+            min-height: 569px;
+            padding-bottom: 134px;
+
+            @media (max-width: $md3+px) {
+                min-height: 295px;
+                padding-bottom: 57px;
+                margin-bottom: 18px;
+            }
+        }
+        
+        & .about-company__text-wrap {
+            max-width: 1330px;
+            &.text-content {
+                font-size: 20px;
+                line-height: 30px;
+
+                & > *:not(figure) {
+                    max-width: 1080px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+    
+                & p {
+                    margin-bottom: 1.5em;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+.certificates {
+    margin-bottom: 60px;
+    @media (max-width: $md3+px) {
+        margin-bottom: 0;
+    }
+
+    &__title {
+        color: $mainColor;
+        margin-bottom: 69px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        padding: 0 110px;
+
+        @media (max-width: $md2+px) {
+            padding: 0 70px;
+        }
+
+        @media (max-width: $md3+px) {
+            padding: 0;
+        }
+
+        @media (max-width: $md3+px) {
+            margin-right: -15px;
+        }
+
+        & .swiper-wrapper {
+        }
+        & .swiper-slide {
+            border: 1px solid #E1E1E1;
+            box-sizing: border-box;
+            padding-bottom: 26.2%;
+            position: relative;
+            cursor: pointer;
+            transition: all .2s ease;
+
+            & > a {
+                transition: all .3s ease;
+            }
+
+            @media (min-width: 992px) {
+                &:hover {
+                    & > a {
+                        opacity: 0.3;
+                    }
+
+                    &:before {
+                        transform: translate(-50%, -50%) scale(0.98);
+                    }
+                }
+            }
+
+            &:before {
+                position: absolute;
+                content: '';
+                top: 50%;
+                left: 50%;
+                z-index: 3;
+                transform: translate(-50%, -50%)  scale(0);
+                width: 42px;
+                height: 46px;
+                background: url('../img/icons/increase.svg') center no-repeat;
+                background-size: contain;
+                transition: all .4s ease;
+                pointer-events: none;
+
+                @media (max-width: $md3+px) {
+                    transform: translate(-50%, -50%)  scale(1);
+                }
+            }
+
+
+            @media (max-width: 1267px) {
+                padding-bottom: 31.2%;
+            }
+
+            @media (max-width: $md2+px) {
+                padding-bottom: 45.2%;
+            }
+
+            @media (max-width: $md3+px) {
+                flex: 0 0 248.45px;
+                height: 345.87px;
+            }
+
+            & img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 95%;
+                height: 96%;
+                object-fit: cover;
+            }
+        }
+        
+    }
+
+    &__slider-control {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+        align-items: center;
+
+        @media (max-width: $md3+px) {
+            display: none;
+        }
+    }
+
+    &__slider-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 46px;
+        flex: 0 0 46px;
+        border: 1px solid #E9F4FF;
+        border-radius: 50%;
+        transition: all .3s ease;
+        cursor: pointer;
+        pointer-events: auto;
+
+        &.swiper-button-disabled {
+            border: 1px solid transparent;
+            cursor: auto;
+
+            
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+        }
+
+        & > span {
+            display: block; 
+            width: 13px;
+            & img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: rgba($mainColor, 0.1);
+            }
+        }
+
+        &_prev {
+
+            @media (min-width: 1350px) {
+                transform: translateX(-45%);
+            }
+        }
+
+        &_next {
+            @media (min-width: 1350px) {
+                transform: translateX(45%);
+            }
+        }
+    }
+}

@@ -52,6 +52,7 @@ $(document).ready(function () {
 	@@include('../common/all-news/all-news.js');
 	
 	@@include('pages/#home.js');
+	@@include('pages/#about-us.js');
 });
 
 //@@include('plagins/lazy-load.js');

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+    <!-- == WRAPPER ================== -->
+    <div class="wrapper about-us-page">
+        <!-- == TOP LINE ================== -->
+        @@include('common/header/_header.html',{})
+        <!-- == // TOP LINE ================== -->
+
+        <!-- == PAGE CONTENT ================== -->
+        <main class="page">
+            <section class="about-company">
+                <div class="about-company__head">
+                    <div class="about-company__bg ibg">
+                        <picture>
+                            <source srcset="img/photo/about-company-bg.jpg" media="(min-width: 768px)">
+                            <img src="img/photo/about-company-bg-mobile.jpg" alt="img">
+                        </picture>
+                    </div>
+                    <div class="container">
+                        <div class="about-company__logo">
+                            <a href="#">
+                                <img src="img/logo/logo-white.svg" alt="logo">
+                            </a>
+                        </div>
+                        <div class="quote">
+                            <div class="quote__icon">
+                                <img src="img/icons/quote.svg" alt="quote">
+                            </div>
+                            <div class="quote__text">
+                                We are young company and manufacturers of an innovative desalination system.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-company__text-wrap text-content container">
+                    <h2 class="about-company__title title-2">WE ARE AQUA-LIFE</h2>
+                    <div class="about-company__subtitle">Producer of innovative desalination systems.</div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero lectus ut semper posuere. At
+                        libero quis eleifend pretium dignissim ut sit semper. Donec enim laoreet est egestas consequat
+                        feugiat sem ullamcorper. Duis vitae, nam tincidunt lorem convallis ut vitae. Amet, lacinia neque
+                        volutpat ac aliquet.
+                    </p>
+                    <p>
+                        Magna suspendisse a iaculis eu semper mattis. Viverra ultricies pulvinar faucibus urna, lorem
+                        pharetra urna. Justo, sed in quisque odio ridiculus auctor. In donec est nec ut porttitor purus,
+                        est parturient metus. Turpis est feugiat ac lorem mi. Neque, faucibus amet lectus sagittis sed
+                        convallis sapien blandit ac. Mi nec duis aliquet habitasse. Pellentesque tincidunt dui lectus
+                        magna aenean posuere enim.
+                    </p>
+                    <p>
+                        Faucibus ac a hendrerit egestas feugiat viverra:
+                    </p>
+
+
+                    <figure>
+                        <iframe src="https://www.youtube.com/embed/H-jSBAzbEmQ" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </figure>
+
+                    <p>
+                        Turpis est feugiat ac lorem mi. Neque, faucibus amet lectus sagittis sed convallis sapien
+                        blandit ac. Mi nec duis aliquet habitasse. Pellentesque tincidunt dui lectus magna aenean
+                        posuere enim.
+                    </p>
+                    <p>
+                        Faucibus ac a hendrerit egestas feugiat viverra:
+                    </p>
+                </div>
+            </section>
+
+            <section class="certificates">
+                <div class="container">
+                    <h2 class="certificates__title title-2 title-line">Certificates:</h2>
+                    <div class="certificates__slider ">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a data-fancybox="group" href="img/photo/Certificate@3x.jpg"><img
+                                            src="img/photo/Certificate.jpg" alt="photo"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a data-fancybox="group" href="img/photo/Certificate@3x.jpg"><img
+                                            src="img/photo/Certificate.jpg" alt="photo"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a data-fancybox="group" href="img/photo/Certificate@3x.jpg"><img
+                                            src="img/photo/Certificate.jpg" alt="photo"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a data-fancybox="group" href="img/photo/Certificate@3x.jpg"><img
+                                            src="img/photo/Certificate.jpg" alt="photo"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a data-fancybox="group" href="img/photo/Certificate@3x.jpg"><img
+                                            src="img/photo/Certificate.jpg" alt="photo"></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a data-fancybox="group" href="img/photo/Certificate@3x.jpg"><img
+                                            src="img/photo/Certificate.jpg" alt="photo"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="certificates__slider-control">
+                            <div class="certificates__slider-btn certificates__slider-btn_prev">
+                                <span>
+                                    <img src="img/icons/chevron-left.svg" alt="arrow">
+                                </span>
+                            </div>
+                            <div class="certificates__slider-btn certificates__slider-btn_next">
+                                <span>
+                                    <img src="img/icons/chevron-right.svg" alt="arrow">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+        <!-- == // PAGE CONTENT ================== -->
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{})
+        <!-- == // FOOTER ================== -->
+        @@include('common/popup/_popup.html',{})
+
+    </div>
+    <!-- == // WRAPPER ================== -->
+    @@include('_js.html',{})
+</body>
+
+</html>

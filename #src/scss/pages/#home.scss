@@ -293,6 +293,21 @@
         }
     }
 
+    & h2.title-2 {
+        margin-bottom: 0;
+    }
+
+    &__subtitle {
+        text-align: center;
+        margin-bottom: 28px;
+        font-size: 18px;
+        line-height: 22px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 25px;
+        }
+    }
+
     &__bg {
         position: absolute;
         top: 0;
