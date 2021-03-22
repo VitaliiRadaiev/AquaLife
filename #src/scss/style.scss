@@ -413,6 +413,10 @@ button.btn-default {
 	& h5 {
 	}
 	& h6 {
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 30px;
+		color: #000000;
 	}
 
 	& p {
@@ -462,11 +466,20 @@ button.btn-default {
 			@media (max-width: $md3+px) {
 				height: 350px;
 			}
-	
+
 			@media (max-width: 575px) {
 				height: 182px;
 			}
 		}
+	}
+
+	& hr {
+		display: block;
+		width: 57px;
+		height: 1px;
+		background-color: #CEDDFF;
+		margin-bottom: 14px;
+		margin-top: -6px;
 	}
 }
 // === and TEXT CONTETN BLOCK ========================================================================
@@ -491,6 +504,10 @@ button.btn-default {
 // ==== PRODUCTS=====================================================
 @import "pages/#products";
 // ==== AND PRODUCTS =====================================================
+
+// ==== SINGLE PRODUCTS =====================================================
+@import "pages/#single-product";
+// ==== AND SINGLE PRODUCTS =====================================================
 
 // ==== NEWS =====================================================
 @import "pages/#news";

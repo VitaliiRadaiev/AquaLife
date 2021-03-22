@@ -53,6 +53,7 @@ $(document).ready(function () {
 	
 	@@include('pages/#home.js');
 	@@include('pages/#about-us.js');
+	@@include('pages/#single-product.js');
 });
 
 @@include('pages/#contact.js');
