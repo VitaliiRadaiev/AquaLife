@@ -182,7 +182,7 @@ spollerInit()
 if($('.anchor').length>0) {
 	$(".anchor").click(function() {
 	  var elementClick = $(this).attr("href")
-	  var destination = $(elementClick).offset().top - 100;
+	  var destination = $(elementClick).offset().top - 125;
 	  jQuery("html:not(:animated),body:not(:animated)").animate({
 		scrollTop: destination
 	  }, 600);
@@ -633,6 +633,9 @@ function inputs_init(inputs) {
 				//'+38(999) 999 9999'
 				//'+375(99)999-99-99'
 				let maskValue = input.dataset.mask;
+				if(!maskValue) {
+					maskValue = '999 999 9999';
+				}
 				input.classList.add('_mask');
 				Inputmask(maskValue, {
 					//"placeholder": '',
@@ -860,6 +863,11 @@ if(priceSlider) {
         burgScroll.addEventListener('click', () => {
             let headerBottom = document.querySelector('.header__bottom');
             headerBottom.classList.toggle('_open');
+
+            let productNav = document.querySelector('.product__nav-wrap ');
+            if(productNav) {
+                productNav.classList.toggle('_z-index');
+            }
         })
 
         let burger = document.querySelector('.header__burger');
@@ -871,6 +879,11 @@ if(priceSlider) {
                     menu.classList.toggle('_open');
                     _slideToggle(menu);
                 } 
+
+                let productNav = document.querySelector('.product__nav-wrap ');
+                if(productNav) {
+                    productNav.classList.toggle('_z-index');
+                }
             })
         }
 
@@ -1239,6 +1252,7 @@ document.addEventListener('keydown', function(e) {
 
         dataSlider = new Swiper(productSlider.querySelector('.info-product__slider-main .swiper-container'), {
             spaceBetween: 10,
+            loop: true,
             navigation: {
             nextEl: productSlider.querySelector('.info-product__slider-btn-next'),
             prevEl: productSlider.querySelector('.info-product__slider-btn-prev'),
@@ -1301,6 +1315,23 @@ document.addEventListener('keydown', function(e) {
         let items = document.querySelectorAll('.product-range__item');
         if(items.length) {
             items.forEach(item => {
+                let container = item.querySelector('.product-range__info');
+                let allHr = container.querySelectorAll('hr');
+
+
+                let arr = Array.from(container.children)
+                let lastHr = arr.findIndex((item, index) => {
+                    if(item == allHr[allHr.length-1]) {
+                        return index;
+                    }
+                })
+
+                let textArr = arr.slice(lastHr+1, -1);
+                let textWrapper = document.createElement('div');
+                textWrapper.className = 'product-range__text-wrap';
+                textWrapper.append(...textArr);
+                allHr[allHr.length-1].after(textWrapper);
+
                 let btn = item.querySelector('.product-range__btn');
                 let text = item.querySelector('.product-range__text-wrap');
 
@@ -1312,7 +1343,75 @@ document.addEventListener('keydown', function(e) {
             })
         }
     }
+
+
+    // == product nav handler ===
+    let productNav = document.querySelector('.product__nav-wrap');
+    if(productNav) {
+        let headerTop = document.querySelector('.header__top');
+        let headerBottom = document.querySelector('.header__bottom');
+        let productHead = document.querySelector('.product__head');
+
+        window.addEventListener('scroll', () => {
+          console.log(getComputedStyle(productHead).marginBottom);
+        console.log(productHead.getBoundingClientRect().bottom);
+            
+            if(document.documentElement.clientWidth > 991) {
+                if(productNav.getBoundingClientRect().top < headerTop.clientHeight) {
+                    productNav.classList.add('_fixed');
+                    productNav.style.top = headerTop.clientHeight + 'px';
+                    productHead.style.paddingBottom = productNav.clientHeight + 'px';
+                }else if(productHead.getBoundingClientRect().bottom >= (parseInt(getComputedStyle(productHead).marginBottom) + productNav.clientHeight)) {
+                    productNav.classList.remove('_fixed');
+                    productHead.style.paddingBottom = 0;
+                }
+            } else {
+                if(productNav.getBoundingClientRect().top < headerBottom.clientHeight) {
+                    productNav.classList.add('_fixed');
+                    productNav.style.top = headerBottom.clientHeight + 'px';
+                    productHead.style.paddingBottom = productNav.clientHeight + 'px';
+                }else if(productHead.getBoundingClientRect().bottom >= (parseInt(getComputedStyle(productHead).marginBottom) + productNav.clientHeight)) {
+                    productNav.classList.remove('_fixed');
+                    productHead.style.paddingBottom = 0;
+                }
+            }
+        
+        })
+    }
+    // == // product nav handler ===
 };
+
+
+	// let fullSizeImages = document.querySelectorAll('figure.size-full');
+	// if(fullSizeImages.length) {
+	// 	fullSizeImages.forEach(figure => {
+	// 		if(figure.closest('.container')) {
+	// 			figureSizeFollHandler(figure, figure.closest('.container'));
+	// 		}
+	// 	})
+	// }
+
+	// function figureSizeFollHandler(figure, container) {
+	// 	let wrapper = document.createElement('div');
+	// 	wrapper.className = '_figure-wrapper';
+	// 	figure.after(wrapper);
+	// 	wrapper.append(figure);
+		
+	// 	let figureHeight = figure.clientHeight;
+	// 	let windowWidth = window.innerWidth;
+
+	// 	figure.style.left = -(windowWidth - container.clientWidth + 30) / 2 + 'px';
+	// 	wrapper.style.height = figureHeight + 'px';
+
+
+	// 	window.addEventListener('resize', () => {
+	// 		let figureHeight = figure.clientHeight;
+	// 		let windowWidth = window.innerWidth;
+	// 		figure.style.left = -(windowWidth - container.clientWidth + 30) / 2 + 'px';
+	// 		wrapper.style.height = figureHeight + 'px';
+	// 	})
+	// }
+
 });
 
 {
@@ -1323,7 +1422,6 @@ document.addEventListener('keydown', function(e) {
 		var map1;
 
         var map2;
-        var globalMarkers;
         
 		var center1 = {
 			lat: 51.2375147549956,
@@ -1345,16 +1443,10 @@ document.addEventListener('keydown', function(e) {
 
 
 		function initMap() {
-            globalMarkers = [
-                    new google.maps.LatLng(51.2375147549956, 17.860102898232235),
-                    new google.maps.LatLng(49.4102183495809, 32.053993300771204),
-                    new google.maps.LatLng(57.77750842208651, -101.65709307870438),
-                    new google.maps.LatLng(-25.037054343294088, 134.42196995479162),
-            ];
-		
+
 			map1 = new google.maps.Map(document.getElementById('map-1'), {
 
-				center: {lat: center1.lat, lng: center1.lng},
+				center: {lat: globalMarkers['1'][0], lng: globalMarkers['1'][1]},
 		
 				panControl: false,
 				mapTypeControl: false,
@@ -1364,17 +1456,17 @@ document.addEventListener('keydown', function(e) {
 
 			map2 = new google.maps.Map(document.getElementById('map-2'), {
 
-				center: {lat: center2.lat, lng: center2.lng},
+				center: {lat: globalMarkers['2'][0], lng: globalMarkers['2'][1]},
 		
 				panControl: false,
 				mapTypeControl: false,
-				zoom: 2,
+				zoom: 4,
 
 
 				//styles: 
 			});
 
-            drop();
+           // drop();
 
 			var marker1 = new google.maps.Marker({
 
@@ -1390,21 +1482,71 @@ document.addEventListener('keydown', function(e) {
 
 		
 			    icon: {
-                    url: 'img/icons/droplet.svg',
+                    url: document.getElementById('map-1').dataset.src,
                     scaledSize: new google.maps.Size(20, 20),
                 } 
 			});
 
+			var marker2 = new google.maps.Marker({
+
+			
+			    position: {lat: markerPosition1.lat, lng: markerPosition1.lng},
+
+		
+			    map: map2,
+
+			
+			    title: '',
+			    label: '',
+
+		
+			    icon: {
+                    url: document.getElementById('map-2').dataset.src,
+                    scaledSize: new google.maps.Size(20, 20),
+                } 
+			});
+
+
+			map10 = new google.maps.Map(document.getElementById('map-10'), {
+
+				center: {lat: 38.664121683223065, lng: 35.517221421873195},
+				panControl: false,
+				mapTypeControl: false,
+				zoom: 2,
+
+
+				//styles: 
+			});
+            drop();
+
+
 		}
 
         function drop() {
-			for (let i = 0; i < globalMarkers.length; i++) 
+			const createAray = () => {
+				let arr = [];
+	
+				if(globalMarkers2) {
+					for(let item in globalMarkers2) {
+						arr.push(globalMarkers2[item]);
+					}
+				}
+	
+				return arr.map(obj => {
+					return new google.maps.LatLng(obj[0], obj[1])
+				})
+				
+			}
+
+			var markersArr = createAray();
+
+			for (let i = 0; i < markersArr.length; i++) 
 			 {
 			   markers.push(new google.maps.Marker({
-			   position: globalMarkers[i],
-			   map: map2,
+			   position: markersArr[i],
+			   map: map10,
                icon: {
-                url: 'img/icons/droplet.svg',
+                url: document.getElementById('map-10').dataset.src,
                 scaledSize: new google.maps.Size(20, 20),
                 } 
 			   }));

@@ -293,6 +293,23 @@
         }
     }
 
+    & h1 {
+        font-family: $mainFontFamily;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 53px;
+        line-height: 65px;
+        margin-bottom: 20px;
+        text-align: center;
+
+        @media (max-width: $md3+px) {
+            font-weight: 200;
+            font-size: 35px;
+            line-height: 42px;
+            margin-bottom: 10px;
+        }
+    }
+
     & h2.title-2 {
         margin-bottom: 0;
     }
@@ -377,6 +394,22 @@
         font-size: 30px;
         line-height: 36px;
         color: #FFFFFF;
+
+        & h1 {
+            font-family: $mainFontFamily;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 53px;
+            line-height: 65px;
+            margin-bottom: 20px;
+    
+            @media (max-width: $md3+px) {
+                font-weight: 200;
+                font-size: 35px;
+                line-height: 42px;
+                margin-bottom: 10px;
+            } 
+        }
 
         @media (max-width: $md3+px) {
             font-size: 20px;

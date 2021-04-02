@@ -355,13 +355,24 @@ button.btn-default {
 .link {
 }
 
-.float-left {
+.float-left, .size-medium {
 	float: left;
 	margin-right: 20px;
 	display: block;
 	max-width: 100%;
 	height: auto;
 	margin-bottom: 20px;
+
+	@media (max-width: $md4+px) {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+
+		& img {
+			width: 100% !important;
+			height: auto !important;
+		}
+	}
 }
 
 .float-right {
@@ -382,6 +393,35 @@ button.btn-default {
 }
 
 // === TEXT CONTETN BLOCK ========================================================================
+// ._figure-wrapper {
+// 	position: relative;
+// 	margin-bottom: 26px;
+
+// 	@media (max-width: $md3+px) {
+// 		margin-bottom: 20px;
+// 	}
+
+// 	& figure.size-full {
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		width: 100vw;
+
+// 		@media (min-width: 1440px) {
+// 			height: 700px;
+
+// 			& img {
+// 				position: absolute;
+// 				top: 0;
+// 				left: 0;
+// 				width: 100%;
+// 				height: 100%;
+// 				object-fit: cover;
+// 			}
+// 		}
+// 	}
+// }
+
 .text-content {
 	font-family: $mainFontFamily;
 	font-style: normal;
@@ -439,38 +479,43 @@ button.btn-default {
 	}
 
 	& figure {
-		display: block;
-		margin-bottom: 26px;
-
-		@media (max-width: $md3+px) {
-			margin-bottom: 20px;
-		}
-
-		& img {
-			width: 100%;
-			height: auto;
+		&:not(.size-medium) {
 			display: block;
-
-			@media (max-width: $md2+px) {
-				width: calc(100% + 30px);
-				margin-left: -15px;
-			}
-		}
-
-		& iframe {
-			display: block;
-			width: 100%;
-			height: 566px;
-			border-radius: 10px;
-
+			margin-bottom: 26px;
+	
 			@media (max-width: $md3+px) {
-				height: 350px;
+				margin-bottom: 20px;
 			}
-
-			@media (max-width: 575px) {
-				height: 182px;
+	
+			& img {
+				width: 100%;
+				height: auto;
+				display: block;
+	
+				@media (max-width: $md2+px) {
+					width: calc(100% + 30px);
+					margin-left: -15px;
+					max-width: none !important;
+				}
+			}
+	
+			& iframe {
+				display: block;
+				width: 100%;
+				height: 566px;
+				border-radius: 10px;
+	
+				@media (max-width: $md3+px) {
+					height: 350px;
+				}
+	
+				@media (max-width: 575px) {
+					height: 182px;
+				}
 			}
 		}
+
+
 	}
 
 	& hr {

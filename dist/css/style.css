@@ -3751,7 +3751,8 @@ button.btn-default:active {
   color: #fff;
 }
 
-.float-left {
+.float-left,
+.size-medium {
   float: left;
   margin-right: 20px;
   display: block;
@@ -3813,18 +3814,18 @@ button.btn-default:active {
   margin-bottom: 30px;
 }
 
-.text-content figure {
+.text-content figure:not(.size-medium) {
   display: block;
   margin-bottom: 26px;
 }
 
-.text-content figure img {
+.text-content figure:not(.size-medium) img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.text-content figure iframe {
+.text-content figure:not(.size-medium) iframe {
   display: block;
   width: 100%;
   height: 566px;
@@ -4269,6 +4270,12 @@ button.btn-default:active {
   padding: 50px 110px 28px;
 }
 
+.form-footer .wpcf7-response-output {
+  color: #fff;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 .form-footer__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4288,6 +4295,16 @@ button.btn-default:active {
   margin-bottom: 35px;
 }
 
+.form-footer__item .wpcf7-form-control-wrap {
+  display: block;
+}
+
+.form-footer__item .wpcf7-form-control-wrap .wpcf7-not-valid-tip {
+  position: absolute;
+  top: 80%;
+  font-size: 12px;
+}
+
 .form-footer__item_hulf {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 calc(50% - 42px);
@@ -4298,6 +4315,8 @@ button.btn-default:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  z-index: 10;
 }
 
 .form-footer__input {
@@ -4396,6 +4415,10 @@ button.btn-default:active {
   cursor: pointer;
 }
 
+.form-footer__code-title br {
+  display: none;
+}
+
 .form-footer__code-title:after {
   position: absolute;
   content: '';
@@ -4440,6 +4463,10 @@ button.btn-default:active {
   background: #121212;
   -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
           box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  display: none;
+}
+
+.form-footer__code-list br {
   display: none;
 }
 
@@ -4589,6 +4616,10 @@ button.btn-default:active {
 
 .main-footer__list > li {
   margin-bottom: 14px;
+}
+
+.main-footer__list > li:first-child .main-footer__link {
+  font-weight: 700;
 }
 
 .main-footer__link {
@@ -5508,6 +5539,16 @@ button.btn-default:active {
   margin-left: auto;
 }
 
+.about-company h1 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 53px;
+  line-height: 65px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .about-company h2.title-2 {
   margin-bottom: 0;
 }
@@ -5581,6 +5622,15 @@ button.btn-default:active {
   font-size: 30px;
   line-height: 36px;
   color: #FFFFFF;
+}
+
+.quote__text h1 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 53px;
+  line-height: 65px;
+  margin-bottom: 20px;
 }
 
 .products-page .actual-goods {
@@ -5802,6 +5852,7 @@ button.btn-default:active {
   width: 100%;
   height: 100%;
   z-index: 3;
+  pointer-events: none;
 }
 
 .product-hero__product-img .container {
@@ -5849,6 +5900,17 @@ button.btn-default:active {
 
 .product__nav-wrap {
   background: #e9f4ff;
+}
+
+.product__nav-wrap._fixed {
+  position: fixed;
+  z-index: 101;
+  width: 100%;
+  left: 0;
+}
+
+.product__nav-wrap._fixed._z-index {
+  z-index: 90;
 }
 
 .product__nav {
@@ -7103,6 +7165,7 @@ button.btn-default:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 40px;
 }
 
 .contact-details__column-1 {
@@ -7112,7 +7175,7 @@ button.btn-default:active {
   margin-right: 20px;
 }
 
-.contact-details__column-1 #map-1 {
+.contact-details__column-1 [id^="map-"] {
   height: 100%;
   min-height: 392px;
   background-color: #c4c4c4;
@@ -7214,7 +7277,7 @@ button.btn-default:active {
   transition: all .3s ease;
 }
 
-.contact-details__bottom #map-2 {
+.contact-details__bottom [id^="map-"] {
   height: 746px;
   width: 100%;
   background-color: #c4c4c4;
@@ -7643,9 +7706,10 @@ button.btn-default:active {
     padding: 47px 30px 47px 30px;
   }
 
-  .text-content figure img {
+  .text-content figure:not(.size-medium) img {
     width: calc(100% + 30px);
     margin-left: -15px;
+    max-width: none !important;
   }
 
   .header__top {
@@ -7973,7 +8037,7 @@ button.btn-default:active {
     margin-right: 0;
   }
 
-  .contact-details__column-1 #map-1 {
+  .contact-details__column-1 [id^="map-"] {
     min-height: 400px;
     width: calc(100% + 30px);
     margin-left: -15px;
@@ -7998,7 +8062,7 @@ button.btn-default:active {
     background-color: rgba(30, 55, 112, 0.3);
   }
 
-  .contact-details__bottom #map-2 {
+  .contact-details__bottom [id^="map-"] {
     width: calc(100% + 30px);
     margin-left: -15px;
   }
@@ -8056,11 +8120,11 @@ button.btn-default:active {
     margin-bottom: 15px;
   }
 
-  .text-content figure {
+  .text-content figure:not(.size-medium) {
     margin-bottom: 20px;
   }
 
-  .text-content figure iframe {
+  .text-content figure:not(.size-medium) iframe {
     height: 350px;
   }
 
@@ -8332,6 +8396,13 @@ button.btn-default:active {
     margin-bottom: 18px;
   }
 
+  .about-company h1 {
+    font-weight: 200;
+    font-size: 35px;
+    line-height: 42px;
+    margin-bottom: 10px;
+  }
+
   .about-company__subtitle {
     margin-bottom: 25px;
   }
@@ -8349,6 +8420,13 @@ button.btn-default:active {
         -ms-flex: 0 0 33px;
             flex: 0 0 33px;
     margin-right: 12px;
+  }
+
+  .quote__text h1 {
+    font-weight: 200;
+    font-size: 35px;
+    line-height: 42px;
+    margin-bottom: 10px;
   }
 
   .quote__text {
@@ -8751,7 +8829,7 @@ button.btn-default:active {
     padding: 0 !important;
   }
 
-  .contact-details__bottom #map-2 {
+  .contact-details__bottom [id^="map-"] {
     height: 400px;
   }
 }
@@ -8783,7 +8861,7 @@ button.btn-default:active {
 }
 
 @media (max-width: 575px) {
-  .text-content figure iframe {
+  .text-content figure:not(.size-medium) iframe {
     height: 182px;
   }
 
@@ -8842,6 +8920,19 @@ button.btn-default:active {
 }
 
 @media (max-width: 479.98px) {
+  .float-left,
+  .size-medium {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .float-left img,
+  .size-medium img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
   .card-post__main {
     height: 122px;
   }

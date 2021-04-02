@@ -54,6 +54,38 @@ $(document).ready(function () {
 	@@include('pages/#home.js');
 	@@include('pages/#about-us.js');
 	@@include('pages/#single-product.js');
+
+
+	// let fullSizeImages = document.querySelectorAll('figure.size-full');
+	// if(fullSizeImages.length) {
+	// 	fullSizeImages.forEach(figure => {
+	// 		if(figure.closest('.container')) {
+	// 			figureSizeFollHandler(figure, figure.closest('.container'));
+	// 		}
+	// 	})
+	// }
+
+	// function figureSizeFollHandler(figure, container) {
+	// 	let wrapper = document.createElement('div');
+	// 	wrapper.className = '_figure-wrapper';
+	// 	figure.after(wrapper);
+	// 	wrapper.append(figure);
+		
+	// 	let figureHeight = figure.clientHeight;
+	// 	let windowWidth = window.innerWidth;
+
+	// 	figure.style.left = -(windowWidth - container.clientWidth + 30) / 2 + 'px';
+	// 	wrapper.style.height = figureHeight + 'px';
+
+
+	// 	window.addEventListener('resize', () => {
+	// 		let figureHeight = figure.clientHeight;
+	// 		let windowWidth = window.innerWidth;
+	// 		figure.style.left = -(windowWidth - container.clientWidth + 30) / 2 + 'px';
+	// 		wrapper.style.height = figureHeight + 'px';
+	// 	})
+	// }
+
 });
 
 @@include('pages/#contact.js');

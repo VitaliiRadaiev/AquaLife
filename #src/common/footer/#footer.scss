@@ -52,6 +52,12 @@
         }
     }
 
+    & .wpcf7-response-output {
+        color: #fff;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
     &__inner {
         display: flex;
         flex-wrap: wrap;
@@ -62,6 +68,16 @@
     &__item {
         flex: 0 1 100%;
         margin-bottom: 35px;
+
+        & .wpcf7-form-control-wrap {
+            display: block;
+
+            & .wpcf7-not-valid-tip {
+                position: absolute;
+                top: 80%;
+                font-size: 12px;
+            }
+        }
     }
 
     &__item_hulf {
@@ -74,6 +90,8 @@
 
     &__item_phone {
         display: flex;
+        position: relative;
+        z-index: 10;
     }
 
     &__input {
@@ -127,6 +145,10 @@
         padding-left: 2px;
         cursor: pointer;
 
+        & br {
+            display: none;
+        }
+
         &:after {
             position: absolute;
             content: '';
@@ -161,6 +183,10 @@
         background: #121212;
         box-shadow: 0 0 10px rgba(#fff, 0.1);
         display: none;
+
+        & br {
+            display: none;
+        }
     }
 
     &__code-item {
@@ -421,6 +447,12 @@
 
         & > li {
             margin-bottom: 14px;
+
+            &:first-child {
+                & .main-footer__link {
+                    font-weight: 700; 
+                }
+            }
         }
     }
 

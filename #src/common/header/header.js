@@ -14,6 +14,11 @@
         burgScroll.addEventListener('click', () => {
             let headerBottom = document.querySelector('.header__bottom');
             headerBottom.classList.toggle('_open');
+
+            let productNav = document.querySelector('.product__nav-wrap ');
+            if(productNav) {
+                productNav.classList.toggle('_z-index');
+            }
         })
 
         let burger = document.querySelector('.header__burger');
@@ -25,6 +30,11 @@
                     menu.classList.toggle('_open');
                     _slideToggle(menu);
                 } 
+
+                let productNav = document.querySelector('.product__nav-wrap ');
+                if(productNav) {
+                    productNav.classList.toggle('_z-index');
+                }
             })
         }
 
