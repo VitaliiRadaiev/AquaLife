@@ -116,9 +116,6 @@
         let productHead = document.querySelector('.product__head');
 
         window.addEventListener('scroll', () => {
-          console.log(getComputedStyle(productHead).marginBottom);
-        console.log(productHead.getBoundingClientRect().bottom);
-            
             if(document.documentElement.clientWidth > 991) {
                 if(productNav.getBoundingClientRect().top < headerTop.clientHeight) {
                     productNav.classList.add('_fixed');

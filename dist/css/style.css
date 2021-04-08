@@ -3832,6 +3832,17 @@ button.btn-default:active {
   border-radius: 10px;
 }
 
+.text-content video {
+  display: block;
+  width: 100%;
+  height: 566px;
+  border-radius: 10px;
+  margin-bottom: 26px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .text-content hr {
   display: block;
   width: 57px;
@@ -5193,6 +5204,19 @@ button.btn-default:active {
 
 .hero {
   position: relative;
+}
+
+.hero .breadcrumbs .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.hero .breadcrumbs .breadcrumbs__list {
+  color: #fff;
+}
+
+.hero .breadcrumbs .breadcrumbs__link {
+  color: #fff;
 }
 
 .hero__bg {
@@ -6840,6 +6864,13 @@ button.btn-default:active {
           flex: 0 0 220px;
   padding-left: 20px;
   padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .related-news {
@@ -7520,6 +7551,10 @@ button.btn-default:active {
             transform: scale(1.1);
   }
 
+  .hero .breadcrumbs .breadcrumbs__link:hover {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
   .card-post:hover .card-post__img img {
     -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
@@ -7594,7 +7629,26 @@ button.btn-default:active {
     width: 126px;
   }
 
-  .related-news__link:hover:before {
+  .article__column-2._flex-end {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+
+  .related-news._fixed {
+    position: fixed;
+    z-index: 50;
+  }
+
+  .related-news._fixed._static {
+    position: static;
+  }
+
+  .related-news__link:hover:not(.active) {
+    text-shadow: 0 0 0.05px #1E3770, 0 0 0.05px #1E3770;
+  }
+
+  .related-news__link:hover:not(.active):before {
     height: 8px;
     width: 8px;
   }
@@ -8126,6 +8180,11 @@ button.btn-default:active {
 
   .text-content figure:not(.size-medium) iframe {
     height: 350px;
+  }
+
+  .text-content video {
+    height: 350px;
+    margin-bottom: 20px;
   }
 
   .footer {
@@ -8862,6 +8921,10 @@ button.btn-default:active {
 
 @media (max-width: 575px) {
   .text-content figure:not(.size-medium) iframe {
+    height: 182px;
+  }
+
+  .text-content video {
     height: 182px;
   }
 

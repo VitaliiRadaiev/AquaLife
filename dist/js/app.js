@@ -1160,7 +1160,21 @@ document.addEventListener('keydown', function(e) {
 		window.addEventListener('resize', () => {
 			mobileSlider();
 		})
+
     }
+}
+
+let allNews = document.querySelector('.all-news__slider .swiper-wrapper');
+if(allNews) {
+
+	let observer = new MutationObserver(mutationRecords => {
+		dataallNewsSlider.update();
+	  });
+	  
+	  observer.observe(allNews, {
+		childList: true,
+		subtree: true, 
+	});
 };
 	
 	{
@@ -1353,9 +1367,6 @@ document.addEventListener('keydown', function(e) {
         let productHead = document.querySelector('.product__head');
 
         window.addEventListener('scroll', () => {
-          console.log(getComputedStyle(productHead).marginBottom);
-        console.log(productHead.getBoundingClientRect().bottom);
-            
             if(document.documentElement.clientWidth > 991) {
                 if(productNav.getBoundingClientRect().top < headerTop.clientHeight) {
                     productNav.classList.add('_fixed');
@@ -1380,37 +1391,34 @@ document.addEventListener('keydown', function(e) {
     }
     // == // product nav handler ===
 };
+	{
+    let asideRelatedNews = document.querySelector('.related-news');
+    if(asideRelatedNews) {
+        let headerTop = document.querySelector('.header__top');
+        let articleColumn2 = document.querySelector('.article__column-2');
 
+        window.addEventListener('scroll', () => {
+            if(document.documentElement.clientWidth > 991) {
+                if(asideRelatedNews.getBoundingClientRect().top < 121) {
+                    asideRelatedNews.classList.add('_fixed');
+                    asideRelatedNews.style.top = '121px';
+                    asideRelatedNews.style.maxWidth = (articleColumn2.clientWidth - 20) + 'px';
+                }else if(articleColumn2.getBoundingClientRect().top >= 121) {
+                    asideRelatedNews.classList.remove('_fixed');
+                }
 
-	// let fullSizeImages = document.querySelectorAll('figure.size-full');
-	// if(fullSizeImages.length) {
-	// 	fullSizeImages.forEach(figure => {
-	// 		if(figure.closest('.container')) {
-	// 			figureSizeFollHandler(figure, figure.closest('.container'));
-	// 		}
-	// 	})
-	// }
-
-	// function figureSizeFollHandler(figure, container) {
-	// 	let wrapper = document.createElement('div');
-	// 	wrapper.className = '_figure-wrapper';
-	// 	figure.after(wrapper);
-	// 	wrapper.append(figure);
-		
-	// 	let figureHeight = figure.clientHeight;
-	// 	let windowWidth = window.innerWidth;
-
-	// 	figure.style.left = -(windowWidth - container.clientWidth + 30) / 2 + 'px';
-	// 	wrapper.style.height = figureHeight + 'px';
-
-
-	// 	window.addEventListener('resize', () => {
-	// 		let figureHeight = figure.clientHeight;
-	// 		let windowWidth = window.innerWidth;
-	// 		figure.style.left = -(windowWidth - container.clientWidth + 30) / 2 + 'px';
-	// 		wrapper.style.height = figureHeight + 'px';
-	// 	})
-	// }
+                console.log(articleColumn2.getBoundingClientRect().bottom);
+                if(articleColumn2.getBoundingClientRect().bottom <= asideRelatedNews.clientHeight + 121) {
+                    asideRelatedNews.classList.add('_static');
+                    articleColumn2.classList.add('_flex-end');
+                } else {
+                    asideRelatedNews.classList.remove('_static');
+                    articleColumn2.classList.remove('_flex-end');
+                }
+            }
+        })
+    }
+};
 
 });
 
@@ -1471,7 +1479,7 @@ document.addEventListener('keydown', function(e) {
 			var marker1 = new google.maps.Marker({
 
 			
-			    position: {lat: markerPosition1.lat, lng: markerPosition1.lng},
+			    position: {lat: globalMarkers['1'][0], lng: globalMarkers['1'][1]},
 
 		
 			    map: map1,
@@ -1490,7 +1498,7 @@ document.addEventListener('keydown', function(e) {
 			var marker2 = new google.maps.Marker({
 
 			
-			    position: {lat: markerPosition1.lat, lng: markerPosition1.lng},
+			    position: {lat: globalMarkers['2'][0], lng: globalMarkers['2'][1]},
 
 		
 			    map: map2,

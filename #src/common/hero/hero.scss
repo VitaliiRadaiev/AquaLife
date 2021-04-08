@@ -1,6 +1,27 @@
 .hero {
     position: relative;
 
+    & .breadcrumbs {
+        & .container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        & .breadcrumbs__list {
+            color: #fff;
+        }
+
+        & .breadcrumbs__link {
+            color: #fff;
+
+            @media (min-width: 992px) {
+                &:hover {
+                    color: rgba(#fff, 0.6);
+                }
+            }
+        }
+    }
+
     &__bg {
         position: absolute;
         top: 0;

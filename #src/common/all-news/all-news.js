@@ -36,5 +36,19 @@
 		window.addEventListener('resize', () => {
 			mobileSlider();
 		})
+
     }
+}
+
+let allNews = document.querySelector('.all-news__slider .swiper-wrapper');
+if(allNews) {
+
+	let observer = new MutationObserver(mutationRecords => {
+		dataallNewsSlider.update();
+	  });
+	  
+	  observer.observe(allNews, {
+		childList: true,
+		subtree: true, 
+	});
 }

@@ -55,7 +55,7 @@
 			var marker1 = new google.maps.Marker({
 
 			
-			    position: {lat: markerPosition1.lat, lng: markerPosition1.lng},
+			    position: {lat: globalMarkers['1'][0], lng: globalMarkers['1'][1]},
 
 		
 			    map: map1,
@@ -74,7 +74,7 @@
 			var marker2 = new google.maps.Marker({
 
 			
-			    position: {lat: markerPosition1.lat, lng: markerPosition1.lng},
+			    position: {lat: globalMarkers['2'][0], lng: globalMarkers['2'][1]},
 
 		
 			    map: map2,
