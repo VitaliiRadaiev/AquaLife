@@ -634,7 +634,7 @@ function inputs_init(inputs) {
 				//'+375(99)999-99-99'
 				let maskValue = input.dataset.mask;
 				if(!maskValue) {
-					maskValue = '999 999 9999';
+					maskValue = '999 999 999 999';
 				}
 				input.classList.add('_mask');
 				Inputmask(maskValue, {
@@ -1122,10 +1122,11 @@ document.addEventListener('keydown', function(e) {
     }
 }
 ;
-	{
+	window.dataallNewsSlider;
+{
     let allNewsSlider = document.querySelector('.all-news__slider .swiper-container');
     if(allNewsSlider) {
-        var dataallNewsSlider;
+
 
         function mobileSlider() {
 			if(document.documentElement.clientWidth <= 767 && allNewsSlider.dataset.mobile == 'false') {
@@ -1163,19 +1164,7 @@ document.addEventListener('keydown', function(e) {
 
     }
 }
-
-let allNews = document.querySelector('.all-news__slider .swiper-wrapper');
-if(allNews) {
-
-	let observer = new MutationObserver(mutationRecords => {
-		dataallNewsSlider.update();
-	  });
-	  
-	  observer.observe(allNews, {
-		childList: true,
-		subtree: true, 
-	});
-};
+;
 	
 	{
     let cardsPost = document.querySelectorAll('.card-post');
@@ -1394,7 +1383,6 @@ if(allNews) {
 	{
     let asideRelatedNews = document.querySelector('.related-news');
     if(asideRelatedNews) {
-        let headerTop = document.querySelector('.header__top');
         let articleColumn2 = document.querySelector('.article__column-2');
 
         window.addEventListener('scroll', () => {

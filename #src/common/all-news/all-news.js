@@ -1,7 +1,8 @@
+window.dataallNewsSlider;
 {
     let allNewsSlider = document.querySelector('.all-news__slider .swiper-container');
     if(allNewsSlider) {
-        var dataallNewsSlider;
+
 
         function mobileSlider() {
 			if(document.documentElement.clientWidth <= 767 && allNewsSlider.dataset.mobile == 'false') {
@@ -38,17 +39,4 @@
 		})
 
     }
-}
-
-let allNews = document.querySelector('.all-news__slider .swiper-wrapper');
-if(allNews) {
-
-	let observer = new MutationObserver(mutationRecords => {
-		dataallNewsSlider.update();
-	  });
-	  
-	  observer.observe(allNews, {
-		childList: true,
-		subtree: true, 
-	});
 }

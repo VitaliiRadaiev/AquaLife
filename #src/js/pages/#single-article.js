@@ -1,7 +1,6 @@
 {
     let asideRelatedNews = document.querySelector('.related-news');
     if(asideRelatedNews) {
-        let headerTop = document.querySelector('.header__top');
         let articleColumn2 = document.querySelector('.article__column-2');
 
         window.addEventListener('scroll', () => {

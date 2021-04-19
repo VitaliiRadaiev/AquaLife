@@ -537,6 +537,24 @@ button.btn-default {
 		}
 	}
 
+	& iframe {
+		overflow: hidden;
+        border-radius: 10px;
+        height: 566px;
+		width: 100%;
+		margin: 0 auto 26px;
+		display: block;
+
+        @media (max-width: $md3+px) {
+            height: 350px;
+        }
+
+        @media (max-width: 575px) {
+            height: 182px;
+        }
+	}
+
+
 	& hr {
 		display: block;
 		width: 57px;

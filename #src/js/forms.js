@@ -303,7 +303,7 @@ function inputs_init(inputs) {
 				//'+375(99)999-99-99'
 				let maskValue = input.dataset.mask;
 				if(!maskValue) {
-					maskValue = '999 999 9999';
+					maskValue = '999 999 999 999';
 				}
 				input.classList.add('_mask');
 				Inputmask(maskValue, {
