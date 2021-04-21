@@ -173,6 +173,13 @@ textarea {
 	flex: 1 1 auto;
 }
 
+.fancybox-bg {
+	background: #fff;
+}
+.fancybox-is-open .fancybox-bg {
+	opacity: 0.95;
+}
+
 .container {
 	max-width: 1330px;
 	margin: 0 auto;
@@ -613,6 +620,10 @@ button.btn-default {
 
 // ==== AND REFERENCE LIST =====================================================
 @import "pages/#contact";
+// ==== AND REFERENCE LIST =====================================================
+
+// ==== AND REFERENCE LIST =====================================================
+@import "pages/#data-sheets";
 // ==== AND REFERENCE LIST =====================================================
 
 // ==== AND PAGES =====================================================

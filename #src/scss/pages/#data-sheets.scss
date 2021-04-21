@@ -1,0 +1,9 @@
+.data-sheets-page {
+    & .load-pdf {
+        padding-top: 50px;
+
+        @media (max-width: $md3+px) {
+            padding-top: 20px;
+        }
+    }
+}

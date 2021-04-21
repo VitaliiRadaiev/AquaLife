@@ -1,29 +1,31 @@
 
 {
-    let productSlider = document.querySelector('.info-product__slider');
-    if(productSlider) {
-        let dataSlider;
-        let dataSliderThumb;
-
-        dataSliderThumb = new Swiper(productSlider.querySelector('.info-product__slider-thumb .swiper-container'), {
-            spaceBetween: 20,
-            slidesPerView: 'auto',
-            freeMode: true,
-            watchSlidesVisibility: true,
-            watchSlidesProgress: true,
-        });
-
-        dataSlider = new Swiper(productSlider.querySelector('.info-product__slider-main .swiper-container'), {
-            spaceBetween: 10,
-            loop: true,
-            navigation: {
-            nextEl: productSlider.querySelector('.info-product__slider-btn-next'),
-            prevEl: productSlider.querySelector('.info-product__slider-btn-prev'),
-            },
-            thumbs: {
-            swiper: dataSliderThumb,
-            }
-        });
+    let productSlider = document.querySelectorAll('.info-product__slider');
+    if(productSlider.length) {
+        productSlider.forEach(slider => {
+            let dataSlider;
+            let dataSliderThumb;
+    
+            dataSliderThumb = new Swiper(slider.querySelector('.info-product__slider-thumb .swiper-container'), {
+                spaceBetween: 20,
+                slidesPerView: 'auto',
+                freeMode: true,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+            });
+    
+            dataSlider = new Swiper(slider.querySelector('.info-product__slider-main .swiper-container'), {
+                spaceBetween: 10,
+                loop: true,
+                navigation: {
+                nextEl: slider.querySelector('.info-product__slider-btn-next'),
+                prevEl: slider.querySelector('.info-product__slider-btn-prev'),
+                },
+                thumbs: {
+                swiper: dataSliderThumb,
+                }
+            });
+        })
     }
 
     let productSchema = document.querySelector('.info-product__bottom');
