@@ -141,3 +141,14 @@ document.addEventListener('keydown', function(e) {
 		}
 	})();
 // === AND Polyfill ===
+
+
+
+let downloadPopup = document.querySelector('#pdfPopup');
+if(downloadPopup) {
+	downloadPopup.addEventListener('click', (e) => {
+		if(e.target.closest('._download-btn') || e.target.closest('._open-in-window')) {
+			popupClose(downloadPopup);
+		}
+	})
+}

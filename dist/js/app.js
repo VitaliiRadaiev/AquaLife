@@ -27,19 +27,25 @@ $(document).ready(function () {
 	});
 
 
-			//==== ADD PADDING-TOP ================================
-			{
-				let wrapper = document.querySelector('.wrapper');
-				if (wrapper) {
-					let header = document.querySelector('.header');
-					if(header) {
-						let headerHeight = header.clientHeight;
-						wrapper.style.paddingTop = headerHeight + 'px';
-					}
-					
-				}
+	//==== ADD PADDING-TOP ================================
+	{
+		let wrapper = document.querySelector('.wrapper');
+		if (wrapper) {
+			let header = document.querySelector('.header');
+			if(header) {
+				let headerHeight = header.clientHeight;
+				wrapper.style.paddingTop = headerHeight + 'px';
 			}
-			//==== AND ADD PADDING-TOP ================================
+			
+		}
+	}
+	//==== AND ADD PADDING-TOP ================================
+
+	let wpAdminTopBar = document.querySelector('#wpadminbar');
+	if(wpAdminTopBar) {
+		let header = document.querySelector('.header');
+		header.style.top = wpAdminTopBar.clientHeight + 'px';
+	}
 
 	//SlideToggle
 let _slideUp = (target, duration = 500) => {
@@ -1099,7 +1105,18 @@ document.addEventListener('keydown', function(e) {
 				Element.prototype.mozMatchesSelector;
 		}
 	})();
-// === AND Polyfill ===;
+// === AND Polyfill ===
+
+
+
+let downloadPopup = document.querySelector('#pdfPopup');
+if(downloadPopup) {
+	downloadPopup.addEventListener('click', (e) => {
+		if(e.target.closest('._download-btn') || e.target.closest('._open-in-window')) {
+			popupClose(downloadPopup);
+		}
+	})
+};
 	{
     let loadCards = document.querySelectorAll('.load-pdf__card');
     if(loadCards.length) {
@@ -1268,9 +1285,9 @@ document.addEventListener('keydown', function(e) {
         })
     }
 
-    let productSchema = document.querySelector('.info-product__bottom');
+    let productSchema = document.querySelector('.popup .info-product__bottom');
     if(productSchema) {
-        let icon = document.querySelector('.info-product__bottom-icon');
+        let icon = productSchema.querySelector('.info-product__bottom-icon');
         productSchema.addEventListener('scroll', () => {
             icon.style.display = 'none';
         })
@@ -1322,7 +1339,22 @@ document.addEventListener('keydown', function(e) {
             items.forEach(item => {
                 let container = item.querySelector('.product-range__info');
                 let allHr = container.querySelectorAll('hr');
+                let btn = item.querySelector('.product-range__btn');
+               
+                if(!allHr.length) {
+                    btn.style.display = 'none';
+                    return
+                } 
+ 
 
+                if(allHr.length === 1) {
+                    console.log(allHr[0].nextElementSibling);
+                    
+                    if(allHr[0].nextElementSibling === btn) {
+                        btn.style.display = 'none';
+                        return
+                    }
+                }
 
                 let arr = Array.from(container.children)
                 let lastHr = arr.findIndex((item, index) => {
@@ -1331,13 +1363,14 @@ document.addEventListener('keydown', function(e) {
                     }
                 })
 
+
                 let textArr = arr.slice(lastHr+1, -1);
+  
                 let textWrapper = document.createElement('div');
                 textWrapper.className = 'product-range__text-wrap';
                 textWrapper.append(...textArr);
                 allHr[allHr.length-1].after(textWrapper);
 
-                let btn = item.querySelector('.product-range__btn');
                 let text = item.querySelector('.product-range__text-wrap');
 
                 btn.addEventListener('click', () => {
@@ -1347,6 +1380,62 @@ document.addEventListener('keydown', function(e) {
                 })
             })
         }
+    }
+
+    let relatedProductCardTextItems = document.querySelectorAll('.related-product-card__text');
+    if(relatedProductCardTextItems.length) {
+        relatedProductCardTextItems.forEach(item => {
+            let btn = document.createElement('div');
+            btn.className = 'product-range__btn';
+            btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none" class="img-svg replaced-svg"><path d="M1 1L6 6L11 1" stroke="#598AFC"></path></svg>';
+            item.append(btn);
+        })
+
+        relatedProductCardTextItems.forEach(item => {
+            let container = item;
+            let allHr = container.querySelectorAll('hr');
+            let btn = item.querySelector('.product-range__btn');
+
+            if(!allHr.length) {
+                btn.style.display = 'none';
+                return
+            } 
+
+
+            if(allHr.length === 1) {
+                console.log(allHr[0].nextElementSibling);
+                
+                if(allHr[0].nextElementSibling === btn) {
+                    btn.style.display = 'none';
+                    return
+                }
+            }
+
+            let arr = Array.from(container.children)
+            let lastHr = arr.findIndex((item, index) => {
+                if(item == allHr[allHr.length-1]) {
+                    return index;
+                }
+            })
+
+
+            let textArr = arr.slice(lastHr+1, -1);
+
+            let textWrapper = document.createElement('div');
+            textWrapper.className = 'product-range__text-wrap';
+            textWrapper.append(...textArr);
+            allHr[allHr.length-1].after(textWrapper);
+
+            let text = item.querySelector('.product-range__text-wrap');
+
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                btn.classList.toggle('_active');
+                item.classList.toggle('active');
+                _slideToggle(text);
+            })
+        })
+
     }
 
 

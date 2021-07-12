@@ -454,7 +454,7 @@
 
 .products-header {
     width: 100%;
-    max-width: 844px;
+    max-width: 874px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -472,7 +472,7 @@
     &__link {
         font-family: $mainFontFamily;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.2em;
         display: inline-flex;
         align-items: center;
@@ -482,9 +482,17 @@
         padding: 10px 1.5em;
         transition: all .3s ease;
         white-space: nowrap;
+
+        & > small {
+            font-size: 18px;
+            margin-right: 5px;
+        }
         
         @media (max-width: 1267px) {
-            font-size: 18px;
+            font-size: 16px;
+            & > small {
+                font-size: 16px;
+            }
         }
 
         @media (max-width: $md2+px) {

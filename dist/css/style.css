@@ -3371,9 +3371,9 @@ body.compensate-for-scrollbar {
   right: 15px;
   padding: 5px;
   cursor: pointer;
-  -webkit-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .popup__close > span {
@@ -3388,7 +3388,7 @@ body.compensate-for-scrollbar {
 
 .popup__close > span:before {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   left: 50%;
   height: 100%;
@@ -3401,7 +3401,7 @@ body.compensate-for-scrollbar {
 
 .popup__close > span:after {
   position: absolute;
-  content: '';
+  content: "";
   top: 50%;
   left: 0;
   height: 1px;
@@ -3463,7 +3463,51 @@ body.compensate-for-scrollbar {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   padding-left: 20px;
-  border-left: 1px solid #E9F4FF;
+  border-left: 1px solid #e9f4ff;
+}
+
+.info-product-popup .popup_content {
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.info-product-popup .popup_content .info-product__bottom .info-product__bottom-icon > span {
+  -webkit-animation: infoProductIconAnim 2s linear infinite;
+          animation: infoProductIconAnim 2s linear infinite;
+}
+
+@-webkit-keyframes infoProductIconAnim {
+  0% {
+    -webkit-transform: translateX(-10px) rotate(-6deg);
+            transform: translateX(-10px) rotate(-6deg);
+  }
+
+  50% {
+    -webkit-transform: translateX(10px) rotate(6deg);
+            transform: translateX(10px) rotate(6deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-10px) rotate(-6deg);
+            transform: translateX(-10px) rotate(-6deg);
+  }
+}
+
+@keyframes infoProductIconAnim {
+  0% {
+    -webkit-transform: translateX(-10px) rotate(-6deg);
+            transform: translateX(-10px) rotate(-6deg);
+  }
+
+  50% {
+    -webkit-transform: translateX(10px) rotate(6deg);
+            transform: translateX(10px) rotate(6deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-10px) rotate(-6deg);
+            transform: translateX(-10px) rotate(-6deg);
+  }
 }
 
 * {
@@ -3803,6 +3847,26 @@ button.btn-default:active {
   margin-bottom: 0.666em;
 }
 
+.text-content h3 {
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 1.2em;
+  text-align: center;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 0.666em;
+}
+
+.text-content h4 {
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1.2em;
+  text-align: center;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 0.666em;
+}
+
 .text-content h6 {
   font-weight: 500;
   font-size: 20px;
@@ -3816,6 +3880,10 @@ button.btn-default:active {
 
 .text-content p ~ h2 {
   margin-top: 1.666em;
+}
+
+.text-content p strong {
+  font-weight: 700;
 }
 
 .text-content ul {
@@ -4238,7 +4306,7 @@ button.btn-default:active {
 
 .products-header {
   width: 100%;
-  max-width: 844px;
+  max-width: 874px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4253,7 +4321,7 @@ button.btn-default:active {
 .products-header__link {
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.2em;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -4269,6 +4337,11 @@ button.btn-default:active {
   -o-transition: all .3s ease;
   transition: all .3s ease;
   white-space: nowrap;
+}
+
+.products-header__link > small {
+  font-size: 18px;
+  margin-right: 5px;
 }
 
 .footer {
@@ -5594,6 +5667,10 @@ button.btn-default:active {
   margin-bottom: 0;
 }
 
+.about-company h2.about-company__title.title-2 {
+  margin-bottom: 15px;
+}
+
 .about-company__subtitle {
   text-align: center;
   margin-bottom: 28px;
@@ -5618,6 +5695,10 @@ button.btn-default:active {
 
 .about-company__logo img {
   width: 100%;
+}
+
+.about-company__logo + .quote .quote__text {
+  margin: 0 auto;
 }
 
 .about-company__text-wrap {
@@ -5646,6 +5727,7 @@ button.btn-default:active {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  display: none;
 }
 
 .quote__icon img {
@@ -5657,7 +5739,7 @@ button.btn-default:active {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  max-width: 626px;
+  max-width: 670px;
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -5865,7 +5947,7 @@ button.btn-default:active {
 }
 
 .product-hero__bottom .container * {
-  max-width: 580px;
+  max-width: 685px;
 }
 
 .product-hero__title {
@@ -5904,9 +5986,9 @@ button.btn-default:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -6228,6 +6310,7 @@ button.btn-default:active {
 }
 
 .info-product__bottom-icon {
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -7739,7 +7822,11 @@ button.btn-default:active {
   }
 
   .products-header__link {
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  .products-header__link > small {
+    font-size: 16px;
   }
 
   .actual-goods__item {
@@ -7760,6 +7847,12 @@ button.btn-default:active {
 
   .popup.related-product-popup .popup_content {
     padding: 47px 30px 47px 30px;
+  }
+
+  .info-product-popup .popup_content .info-product__bottom .info-product__schema {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
   }
 
   .text-content figure:not(.size-medium) img {
@@ -8016,12 +8109,6 @@ button.btn-default:active {
     position: relative;
   }
 
-  .info-product__schema {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-  }
-
   .look-inside__body {
     display: block;
   }
@@ -8170,6 +8257,14 @@ button.btn-default:active {
 
   .text-content h2 {
     font-size: 24px;
+  }
+
+  .text-content h3 {
+    font-size: 20px;
+  }
+
+  .text-content h4 {
+    font-size: 18px;
   }
 
   .text-content ul {
@@ -8506,6 +8601,14 @@ button.btn-default:active {
 
   .info-listing {
     margin-bottom: 20px;
+  }
+
+  .info-listing__top {
+    margin-bottom: 20px;
+  }
+
+  .info-listing__top.text-content {
+    font-weight: 400;
   }
 
   .info-listing__body {

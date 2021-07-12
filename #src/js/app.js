@@ -27,19 +27,25 @@ $(document).ready(function () {
 	});
 
 
-			//==== ADD PADDING-TOP ================================
-			{
-				let wrapper = document.querySelector('.wrapper');
-				if (wrapper) {
-					let header = document.querySelector('.header');
-					if(header) {
-						let headerHeight = header.clientHeight;
-						wrapper.style.paddingTop = headerHeight + 'px';
-					}
-					
-				}
+	//==== ADD PADDING-TOP ================================
+	{
+		let wrapper = document.querySelector('.wrapper');
+		if (wrapper) {
+			let header = document.querySelector('.header');
+			if(header) {
+				let headerHeight = header.clientHeight;
+				wrapper.style.paddingTop = headerHeight + 'px';
 			}
-			//==== AND ADD PADDING-TOP ================================
+			
+		}
+	}
+	//==== AND ADD PADDING-TOP ================================
+
+	let wpAdminTopBar = document.querySelector('#wpadminbar');
+	if(wpAdminTopBar) {
+		let header = document.querySelector('.header');
+		header.style.top = wpAdminTopBar.clientHeight + 'px';
+	}
 
 	@@include('_function.js');
 	@@include('files/dynamic_adapt.js');
