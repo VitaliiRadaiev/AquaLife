@@ -495,7 +495,7 @@
     }
 
     &__bottom-icon {
-        display: block;
+        display: none !important;
         @media (min-width: 992px) {
             display: none;
         }

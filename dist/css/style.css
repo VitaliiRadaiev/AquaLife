@@ -6310,7 +6310,7 @@ button.btn-default:active {
 }
 
 .info-product__bottom-icon {
-  display: block;
+  display: none !important;
   position: absolute;
   top: 50%;
   left: 50%;
